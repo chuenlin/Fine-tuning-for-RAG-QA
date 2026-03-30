@@ -1,0 +1,65 @@
+ID,Type,Question,Ground Truth
+1,單選題,"下列何者不是資料上傳至Splunk時就需決定的欄位?
+ (a) sourcetype
+ (b) host
+ (c) index
+ (d) user",(d) user,
+2,單選題,"下列何者不是Splunk的搜尋模式之一?
+ (a) 自動模式
+ (b) 智慧模式
+ (c) 快速模式
+ (d) 詳細模式",(a) 自動模式,
+3,單選題,"下列搜尋語法，何者最有效率?
+ (a) ""failed password""
+ (b) ""failed password""*
+ (c) index=* ""failed password""
+ (d) index=security ""failed password""","(d) index=security ""failed password""",
+4,單選題,"選出以下「|」擺放位置正確的搜尋語法
+ (a) index=security sourcetype=access_* status=200 top | clientip by price
+ (b) index=security sourcetype=access_* status=200 | top clientip by price
+ (c) index=security sourcetype=access_* status=200 | top clientip | by price
+ (d) index=security sourcetype=access_* | status=200 | top clientip by price",(b) index=security sourcetype=access_* status=200 | top clientip by price,
+5,單選題,"下列哪個搜尋語法會回傳netfw索引中含有failure字樣的事件，或netops索引中含有warn或critical字樣的事件?
+ (a) (index=netfw failure) AND index=netops warn OR critical
+ (b) (index=netfw failure) OR (index=netops (warn OR critical))
+ (c) (index=netfw failure) AND (index=netops (warn OR critical))
+ (d) (index=netfw failure) OR index=netops OR (warn OR critical)",(b) (index=netfw failure) OR (index=netops (warn OR critical)),
+6,單選題,"下列哪個搜尋語法只會回傳來自WWW3主機的事件?
+ (a) host=*
+ (b) host=WWW3
+ (c) host=WWW*
+ (d) Host=WWW3",(b) host=WWW3,
+7,是非題,請問以下描述是否正確? Splunk三個主要的功能角色分別是Search Head、Indexer、Deployer,錯誤,
+8,是非題,請問以下描述是否正確? Splunk資料儲存於Forwarder,錯誤,
+9,是非題,請問以下描述是否正確? 一台Splunk實體只能同時作為一種角色,錯誤,
+10,是非題,請問以下描述是否正確? Search & Reporting是預設即有的Splunk應用套件之一,正確,
+11,是非題,請問以下描述是否正確? 上傳資料時，若沒有指定資料要儲存至的index，則預設會儲存在index=default中,錯誤,
+12,多選題,"以下哪些搜尋指令執行的結果是以表格呈現?
+ (a) sort
+ (b) table
+ (c) top
+ (d) dedup
+ (e) fields","(b) table
+(c) top",
+13,多選題,"下列敘述中，何者可以增加搜尋速度?
+ (a) 在搜尋時不指定時間範圍
+ (b) 在搜尋語法一開始指定index名稱
+ (c) 使用詳細模式進行搜尋
+ (d) 使用萬用字元進行搜尋
+ (e) 輸入較為精準的字彙進行搜尋","(b) 在搜尋語法一開始指定index名稱
+(e) 輸入較為精準的字彙進行搜尋 ",
+14,多選題,"下列哪些搜尋語法的撰寫方式有誤?
+ (a) index=asa | where action=""deny""
+ (b) index=linux NOT error | table | sort process
+ (c) index=wineventlog sourcetype=win:unknown OR sourcetype=win:remote
+ (d) index=os | head 3 | sourcetype=access_log
+ (e) index=web | top 6 action by session","(b) index=linux NOT error | table | sort process
+(d) index=os | head 3 | sourcetype=access_log",
+15,多選題,"以下針對從Splunk網頁介面上傳資料的敘述，哪些有誤?
+ (a) Splunk網頁預設使用http port 8000
+ (b) source欄位預設值為檔案名稱
+ (c) 網頁上傳沒有檔案大小的限制
+ (d) host欄位值通常要設定為Splunk的hostname
+ (e) 資料可以在上傳完成之後，調整儲存的index位置","(c) 網頁上傳沒有檔案大小的限制
+(d) host欄位值通常要設定為Splunk的hostname
+(e) 資料可以在上傳完成之後，調整儲存的index位置",

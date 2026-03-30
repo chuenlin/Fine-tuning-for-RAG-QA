@@ -1,0 +1,402 @@
+[
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nOSI模型將網路通訊分為七層：第一層實體層（Physical）、第二層資料連結層（Data Link）、第三層網路層（Network）、第四層傳輸層（Transport）、第五層會話層（Session）、第六層表示層（Presentation）、第七層應用層（Application）。\n實體層負責傳輸原始位元流，定義電壓、頻率和接頭規格等物理特性。資料連結層負責在相鄰節點間可靠傳輸資料框（Frame），並進行錯誤偵測與修正。常見的資料連結層協定包含Ethernet、Wi-Fi（802.11）和PPP。\n網路層負責路由選擇與邏輯定址，IP協定（IPv4和IPv6）運作於此層。傳輸層提供端到端的資料傳輸服務，TCP（可靠傳輸）和UDP（無連線快速傳輸）運作於此層。會話層管理應用程式間的對話連線。\n表示層負責資料的格式轉換、加密與壓縮，確保不同系統間的資料格式相容。應用層是最靠近使用者的一層，提供網路服務給應用程式，常見協定包含HTTP、FTP、SMTP、DNS、SNMP等。\nTCP/IP模型是實務上廣泛使用的網路模型，將OSI七層簡化為四層：網路存取層（對應OSI第1、2層）、網際網路層（第3層）、傳輸層（第4層）、應用層（第5、6、7層）。現代網際網路依據TCP/IP協定運作。\n\n問題：單選題：OSI模型中，IP協定運作於哪一層？\n(a) 實體層\n(b) 資料連結層\n(c) 網路層\n(d) 傳輸層",
+    "output": "(c) 網路層"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nIPv4使用32位元位址，以點分十進位表示（如192.168.1.1），總共約可提供43億個位址。由於IPv4位址即將耗盡，IETF制定了IPv6標準以解決此問題。目前兩種版本共存，透過雙堆疊或隧道技術互通。\nIPv6使用128位元位址，以十六進位冒號分隔表示（如2001:0db8:85a3::8a2e:0370:7334），可提供約3.4×10³⁸個位址，幾乎不受位址耗盡問題困擾。IPv6還內建IPSec支援，安全性更高。\n私有IP位址範圍（RFC 1918）：10.0.0.0/8（Class A）、172.16.0.0/12（Class B）、192.168.0.0/16（Class C）。這些位址僅供內部網路使用，不可直接路由至公網，需透過NAT對外連接。\n子網路遮罩（Subnet Mask）區分IP位址的網路部分和主機部分。以/24（255.255.255.0）為例，前24位元為網路位址，後8位元為主機位址，可容納最多254台主機（扣除網路位址和廣播位址）。\nNAT（Network Address Translation）技術讓多台內網設備共用一個公有IP對外連接，是解決IPv4位址不足的常見方法。SNAT（來源NAT）用於內網出外網，DNAT（目的NAT）用於外網連入內網服務。\n\n問題：是非題：請問以下描述是否正確？\nIPv6使用32位元位址空間，相較IPv4提供更多可用位址。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nDNS（Domain Name System）將人類可讀的網域名稱轉換為機器可讀的IP位址，採用分散式階層式架構。解析流程：查本地快取→查本地DNS伺服器→遞迴查根伺服器→查TLD伺服器→查權威伺服器。\nDNS記錄類型：A記錄（IPv4位址）、AAAA記錄（IPv6位址）、CNAME（別名，指向另一個網域名稱）、MX（郵件伺服器位址）、NS（權威名稱伺服器）、TXT（文字資訊，常用於域名驗證和SPF設定）。\n常見網路協定預設Port：HTTP=80、HTTPS=443、FTP控制=21、FTP資料=20、SSH=22、Telnet=23、SMTP=25、DNS=53、DHCP=67/68、POP3=110、IMAP=143、SNMP=161、RDP=3389。\nHTTP方法：GET（取得資源）、POST（提交資料）、PUT（更新資源）、DELETE（刪除資源）、PATCH（部分更新）、HEAD（只取得標頭）、OPTIONS（查詢支援的方法）。RESTful API設計遵循HTTP語意使用這些方法。\nHTTPS在HTTP基礎上加入TLS（Transport Layer Security）加密，使用非對稱加密交換對稱金鑰，再用對稱加密傳輸資料。TLS握手過程包含：ClientHello→ServerHello→憑證驗證→金鑰交換→加密通訊建立。\n\n問題：單選題：DNS的A記錄用途為何？\n(a) 指向郵件伺服器\n(b) 將網域名稱對應至IPv4位址\n(c) 設定網域別名\n(d) 指定權威名稱伺服器",
+    "output": "(b) 將網域名稱對應至IPv4位址"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nTCP（Transmission Control Protocol）是連線導向的可靠傳輸協定。建立連線需三向交握：(1)客戶端送SYN，(2)伺服器回SYN-ACK，(3)客戶端送ACK。連線建立後雙方可互相傳送資料。\nTCP使用滑動視窗（Sliding Window）進行流量控制，允許傳送方在未收到ACK前持續傳送多個封包，提高傳輸效率。擁塞控制演算法（如慢啟動、擁塞避免、快速重傳）防止網路過載。\nUDP（User Datagram Protocol）是無連線的傳輸協定，不保證傳輸可靠性，但延遲低、效率高。適用於對即時性要求高的應用，如影音串流、線上遊戲、VoIP、DNS查詢、DHCP等。\nTCP連線終止使用四向揮手：(1)一方送FIN，(2)另一方回ACK，(3)另一方送FIN，(4)一方回ACK。TIME_WAIT狀態確保最後的ACK對方已收到，持續2倍最大報文段壽命（2MSL）時間。\n封包交換（Packet Switching）是現代網際網路的基本傳輸方式，資料被分割成封包後可經由不同路徑傳輸，在接收端重組。電路交換（Circuit Switching）則是傳統電話網路的方式，預先建立專用電路。\n\n問題：多選題：下列哪些關於TCP和UDP的描述是正確的？\n(a) TCP需要三向交握建立連線\n(b) UDP保證資料不遺失\n(c) UDP適合即時影音串流\n(d) TCP使用滑動視窗做流量控制\n(e) TCP和UDP都運作在傳輸層",
+    "output": "(a) TCP需要三向交握建立連線\n(c) UDP適合即時影音串流\n(d) TCP使用滑動視窗做流量控制\n(e) TCP和UDP都運作在傳輸層"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n防火牆依規則過濾進出網路的流量，分為：封包過濾防火牆（Packet Filter，檢查IP和Port）、狀態檢測防火牆（Stateful Inspection，追蹤連線狀態）、應用層防火牆（WAF，解析應用層協定）。\nVLAN（Virtual LAN）在同一實體網路上劃分多個邏輯網路，提供流量隔離和安全性。Trunk Port使用802.1Q標籤傳遞多個VLAN流量。VLAN間通訊需透過三層設備（路由器或三層交換器）。\n無線網路標準IEEE 802.11演進：802.11b（2.4GHz，11Mbps）→802.11g（2.4GHz，54Mbps）→802.11n（Wi-Fi 4，300Mbps）→802.11ac（Wi-Fi 5，1Gbps+）→802.11ax（Wi-Fi 6，9.6Gbps）。\nVPN（Virtual Private Network）透過加密隧道在公共網路上建立安全私有連線。常見協定：IPSec（網路層加密）、SSL/TLS VPN（應用層，透過瀏覽器）、OpenVPN（開源）、WireGuard（新一代，高效輕量）。\nSDN（Software Defined Networking，軟體定義網路）將網路的控制平面（Control Plane）與資料平面（Data Plane）分離，由集中式控制器統一管理網路設備，提高網路靈活性和可程式化管理能力。\n\n問題：是非題：請問以下描述是否正確？\nVLAN間的通訊可以直接在二層交換器上完成，不需要路由器。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n關聯式資料庫（RDBMS）以表格儲存資料，具備ACID特性：Atomicity（原子性，交易全成功或全失敗）、Consistency（一致性，維護資料完整性約束）、Isolation（隔離性，交易互不干擾）、Durability（持久性，已提交的交易永久保存）。\nSQL語言分類：DDL（Data Definition Language）包含CREATE/ALTER/DROP，用於定義資料庫結構；DML（Data Manipulation Language）包含SELECT/INSERT/UPDATE/DELETE，用於操作資料；DCL包含GRANT/REVOKE，用於控制存取權限。\n主鍵（Primary Key）唯一識別資料表中每筆記錄，不可為NULL且不重複，一個資料表只能有一個主鍵。外鍵（Foreign Key）建立兩資料表間的參考關係，外鍵值必須對應到被參考表的主鍵值，確保參考完整性。\n資料庫索引（Index）加速查詢的資料結構，B-Tree索引適合範圍查詢（<、>、BETWEEN）和排序，Hash索引適合等值查詢（=）。索引提升SELECT效能，但增加INSERT/UPDATE/DELETE的成本與儲存空間。\n資料庫正規化減少冗餘、提高一致性：1NF要求欄位不可分割（原子性）；2NF在1NF基礎上消除部分相依（非主鍵欄位完全相依於主鍵）；3NF在2NF基礎上消除遞移相依（非主鍵欄位不相依於另一個非主鍵欄位）。\n\n問題：單選題：下列哪個SQL指令屬於DDL（資料定義語言）？\n(a) SELECT\n(b) INSERT\n(c) CREATE\n(d) UPDATE",
+    "output": "(c) CREATE"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nSQL JOIN合併多個資料表：INNER JOIN只回傳兩表符合條件的記錄；LEFT JOIN回傳左表所有記錄及右表符合的記錄（右表無符合則為NULL）；RIGHT JOIN與LEFT JOIN相反；FULL OUTER JOIN回傳兩表所有記錄。\n子查詢（Subquery）是嵌套在另一個SQL語句中的SELECT語句。可以在WHERE子句（如IN、EXISTS）、FROM子句（衍生表）或SELECT清單中使用。相關子查詢（Correlated Subquery）參考外部查詢的欄位，逐列執行。\n資料庫交易（Transaction）使用COMMIT確認所有操作，或ROLLBACK回滾所有操作。SAVEPOINT設置中間存檔點，可回滾至特定點而非整個交易。交易保證ACID特性，確保並發存取下的資料一致性。\nSQL聚合函數：COUNT（計數）、SUM（加總）、AVG（平均值）、MAX（最大值）、MIN（最小值）。搭配GROUP BY將資料分組後計算聚合值，HAVING子句篩選分組後的結果（類似WHERE但作用於分組後）。\nSQL視窗函數（Window Function）在不折疊行數的情況下執行計算，如ROW_NUMBER（序號）、RANK（排名）、DENSE_RANK（不跳號排名）、LAG/LEAD（存取前後行）、SUM OVER（累計加總）。\n\n問題：是非題：請問以下描述是否正確？\nSQL LEFT JOIN只回傳兩個資料表中都有符合條件的記錄。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nNoSQL資料庫分為四種類型：文件型（Document，如MongoDB，儲存JSON/BSON文件）、鍵值型（Key-Value，如Redis，高速快取）、列族型（Wide-Column，如Cassandra，適合時序資料）、圖型（Graph，如Neo4j，適合關係分析）。\nCAP定理：分散式系統不能同時滿足一致性（Consistency）、可用性（Availability）、分區容錯性（Partition Tolerance）三者，只能選擇其中兩個。RDBMS選CP（犧牲可用性），多數NoSQL選AP（犧牲強一致性）。\nRedis是記憶體內（In-Memory）鍵值資料庫，支援多種資料結構：String、List、Hash、Set、Sorted Set、Bitmap、HyperLogLog。常用於快取（Cache）、Session儲存、排行榜、發布訂閱（Pub/Sub）、分散式鎖。\nMongoDB文件型資料庫使用BSON（Binary JSON）格式儲存資料，支援靈活的Schema設計（Schema-less）。Collection相當於RDBMS的Table，Document相當於Row。支援豐富的查詢語法和聚合管道（Aggregation Pipeline）。\n資料庫備份策略：完整備份（Full Backup，備份所有資料）、差異備份（Differential，備份自上次完整備份後的變更）、增量備份（Incremental，備份自上次任何備份後的變更）。增量備份恢復較慢但佔用空間最少。\n\n問題：單選題：下列哪種NoSQL資料庫最適合用於高速快取（Cache）場景？\n(a) MongoDB\n(b) Neo4j\n(c) Cassandra\n(d) Redis",
+    "output": "(d) Redis"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料庫事務隔離級別（由低到高）：READ UNCOMMITTED（可讀未提交資料，髒讀）、READ COMMITTED（只讀已提交資料）、REPEATABLE READ（可重複讀取，MySQL InnoDB預設）、SERIALIZABLE（完全序列化執行，最安全但效能最低）。\n並發問題：Dirty Read（髒讀，讀到另一交易未提交的資料）；Non-repeatable Read（不可重複讀，同一交易兩次讀取結果不同，因為其他交易已更新）；Phantom Read（幻讀，兩次查詢行數不同，因為其他交易已插入或刪除）。\n資料庫鎖定：共享鎖（S Lock，讀鎖，多個交易可同時持有）、排他鎖（X Lock，寫鎖，只允許一個交易持有）。死鎖（Deadlock）是兩個或多個交易互相等待對方持有的鎖，資料庫通常透過逾時或死鎖偵測來處理。\nSQL注入（SQL Injection）攻擊者在輸入欄位插入惡意SQL語句操控資料庫。防範方法：參數化查詢（Prepared Statement）、ORM框架、輸入驗證、最小權限原則（資料庫帳號只給必要權限）、WAF（Web應用防火牆）。\n資料庫分片（Sharding）是水平分割策略，將資料分散至多個資料庫節點，每個節點只儲存部分資料，以提升擴展性。分片鍵（Shard Key）的選擇影響資料分佈均勻性和查詢效率，需避免熱點問題。\n\n問題：多選題：下列哪些是可能發生於資料庫並發存取的問題？\n(a) 髒讀（Dirty Read）\n(b) 索引失效\n(c) 不可重複讀（Non-repeatable Read）\n(d) 幻讀（Phantom Read）\n(e) 主鍵衝突",
+    "output": "(a) 髒讀（Dirty Read）\n(c) 不可重複讀（Non-repeatable Read）\n(d) 幻讀（Phantom Read）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nORM（Object-Relational Mapping）框架將物件與資料庫表格進行映射，讓開發者用物件導向方式操作資料庫，不需直接撰寫SQL。常見ORM：Java的Hibernate/JPA、Python的SQLAlchemy/Django ORM、Ruby的ActiveRecord。\n資料倉儲（Data Warehouse）儲存大量歷史資料，供複雜分析查詢使用。採用星狀綱要（Star Schema，事實表+維度表）或雪花綱要（Snowflake Schema，維度表進一步正規化）。ETL（Extract-Transform-Load）處理資料整合。\nOLTP（Online Transaction Processing）處理日常業務交易，特點是高頻率、短時間的讀寫操作，強調一致性和即時性。OLAP（Online Analytical Processing）用於複雜分析，讀取大量資料，強調查詢效能和多維度分析。\n預存程序（Stored Procedure）是儲存在資料庫中可重複呼叫的SQL程序，在資料庫伺服器端執行，減少網路傳輸、提升效能。觸發器（Trigger）在特定DML操作（INSERT/UPDATE/DELETE）時自動執行，用於維護業務規則。\n連線池（Connection Pool）預先建立並管理一批資料庫連線，應用程式從池中借用連線使用後歸還，避免頻繁建立和關閉連線的開銷。常見實作：HikariCP（Java）、pgbouncer（PostgreSQL）、ProxySQL（MySQL）。\n\n問題：是非題：請問以下描述是否正確？\nOLAP系統主要用於處理高頻率、短時間的日常業務交易操作。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n作業系統（OS）管理電腦硬體與軟體資源，主要功能：行程管理（Process Management）、記憶體管理（Memory Management）、檔案系統管理（File System）、設備管理（Device Management）、使用者介面（UI）。\n行程（Process）是執行中的程式實例，包含：程式碼段（Code Segment）、資料段（Data Segment）、堆疊段（Stack）、堆積（Heap）、行程控制塊（PCB，儲存行程狀態資訊）。行程是OS資源分配的基本單位。\n執行緒（Thread）是行程內的執行單位，同一行程的執行緒共享地址空間和資源，但各自擁有獨立的暫存器和堆疊。多執行緒提高並發性。行程切換成本高，執行緒切換成本低。\n行程排程演算法：FCFS（先來先服務，簡單但可能有護衛效應）、SJF（最短工作優先，平均等待時間最短但可能飢餓）、Round Robin（循環，時間片輪替，公平）、Priority（優先權排程，高優先級先執行）。\n行程間通訊（IPC）方式：管道（Pipe，單向，父子行程間）、命名管道（Named Pipe，雙向，無親緣關係）、訊息佇列（Message Queue）、共享記憶體（Shared Memory，最快）、信號（Signal）、Socket（跨主機）。\n\n問題：單選題：下列哪種行程排程演算法使用時間片讓每個行程輪流執行？\n(a) FCFS\n(b) SJF\n(c) Round Robin\n(d) Priority Scheduling",
+    "output": "(c) Round Robin"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n記憶體管理技術：分區配置（連續配置，有外部碎片問題）、分頁（Paging，固定大小頁框，消除外部碎片）、分段（Segmentation，依邏輯單元分割，消除內部碎片）、分段分頁（結合兩者優點）。\n虛擬記憶體（Virtual Memory）使磁碟空間模擬更大的記憶體，讓程式可使用超過實體記憶體的位址空間。頁面表（Page Table）將虛擬位址映射至實體位址。TLB（Translation Lookaside Buffer）快取頁面表提升效率。\n分頁置換演算法：FIFO（先進先出，實作簡單但效能差）、LRU（Least Recently Used，最近最少使用，實務上效果好）、OPT（最佳置換，理論最佳但無法實現，用於評估其他算法）、Clock（LRU的近似實作）。\n死鎖（Deadlock）四個必要條件（Coffman Conditions）：互斥（Mutual Exclusion）、保持並等待（Hold and Wait）、不可搶占（No Preemption）、循環等待（Circular Wait）。預防死鎖需破壞至少一個條件。\n銀行家演算法（Banker's Algorithm）是死鎖避免演算法，透過模擬資源分配判斷系統是否處於安全狀態（Safe State），只在安全狀態下才允許資源配置。缺點是需要事先知道最大資源需求，實際使用有困難。\n\n問題：是非題：請問以下描述是否正確？\n分頁（Paging）記憶體管理技術可以有效消除外部碎片（External Fragmentation）。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nLinux檔案系統層次（FHS）：/（根目錄）、/bin（一般使用者指令）、/sbin（系統管理指令）、/etc（系統設定檔）、/home（使用者家目錄）、/var（可變資料）、/tmp（暫存檔案）、/usr（使用者程式）、/dev（設備檔案）。\nLinux權限使用三組rwx：擁有者（Owner）、群組（Group）、其他人（Others）。r=讀取（4）、w=寫入（2）、x=執行（1）。數字表示如755=rwxr-xr-x。chmod修改權限，chown修改擁有者，chgrp修改群組。\nLinux常用指令：ls（列出目錄）、cd（切換目錄）、pwd（顯示路徑）、cp（複製）、mv（移動/重新命名）、rm（刪除）、mkdir（建立目錄）、cat（顯示檔案內容）、grep（搜尋文字）、find（搜尋檔案）。\nLinux行程管理：ps（列出行程）、top（即時監控）、kill（傳送信號）、nice/renice（調整優先級）、bg/fg（背景/前景執行）、nohup（關閉終端後繼續執行）。信號類型：SIGTERM（15，請求終止）、SIGKILL（9，強制終止）。\nI/O排程演算法管理磁碟存取：FCFS（按請求順序）、SSTF（最短尋道時間優先，可能飢餓）、SCAN（電梯演算法，來回掃描）、C-SCAN（單向SCAN）、CFQ（完全公平佇列，Linux預設）。SCAN和C-SCAN廣泛應用。\n\n問題：單選題：Linux中哪個指令可以用來搜尋檔案中包含特定文字的行？\n(a) find\n(b) ls\n(c) grep\n(d) cat",
+    "output": "(c) grep"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n虛擬化技術（Virtualization）讓一台實體機器同時運行多個OS。Hypervisor分為：Type 1（裸機型，直接在硬體運行，如VMware ESXi、Hyper-V、KVM）、Type 2（寄宿型，在OS上運行，如VirtualBox、VMware Workstation）。\n容器技術（Container）輕量化虛擬化，共享主機OS核心。Docker使用Dockerfile建構映像檔，容器是映像的執行實例。映像分層（Layer）共享機制節省空間。Docker Compose管理多容器應用，Docker Hub是公開倉庫。\nKubernetes（K8s）核心概念：Pod（含一或多個容器的最小部署單位）、ReplicaSet（維護Pod副本數）、Deployment（管理Pod的升級與回滾）、Service（穩定的網路端點）、Ingress（HTTP路由）、ConfigMap/Secret（設定管理）。\n系統呼叫（System Call）是應用程式請求OS核心服務的介面，切換從使用者模式（User Mode）到核心模式（Kernel Mode）。常見類型：檔案操作（open/read/write/close）、行程管理（fork/exec/exit）、記憶體（mmap/brk）。\n中斷（Interrupt）是CPU暫停目前任務去處理事件的機制。硬體中斷（Hardware Interrupt）由硬體設備觸發（如鍵盤、網卡）；軟體中斷（Software Interrupt/Trap）由程式指令觸發（如系統呼叫）。中斷處理程序（ISR）負責回應。\n\n問題：多選題：下列哪些是Kubernetes的核心概念？\n(a) Pod\n(b) Dockerfile\n(c) Deployment\n(d) Service\n(e) Hypervisor",
+    "output": "(a) Pod\n(c) Deployment\n(d) Service"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nCPU排程目標：最大化CPU使用率（CPU Utilization）和吞吐量（Throughput）、最小化等待時間（Waiting Time）、回應時間（Response Time）和完成時間（Turnaround Time）。不同排程演算法在這些指標上有不同取捨。\n多核心處理器的並行（Parallelism）讓多個執行緒真正同時在不同核心執行。對稱多處理（SMP）所有CPU共享記憶體。NUMA（Non-Uniform Memory Access）不同CPU存取本地記憶體速度較快，遠端記憶體較慢。\n記憶體階層由快到慢：暫存器（Register）→L1快取（~1ns）→L2快取（~4ns）→L3快取（~10ns）→主記憶體RAM（~100ns）→SSD（~100μs）→HDD（~10ms）。快取命中率（Cache Hit Rate）影響系統效能。\n磁碟儲存技術：HDD（機械硬碟，容量大成本低，但速度慢）、SSD（固態硬碟，無移動部件，速度快但成本較高）、NVMe SSD（透過PCIe介面，速度比SATA SSD快3-5倍）。RAID技術提供資料冗餘和效能提升。\n作業系統啟動流程（以x86為例）：BIOS/UEFI自我測試（POST）→載入開機磁區（MBR/GPT）→執行開機載入器（Bootloader，如GRUB）→載入OS核心→核心初始化→啟動init/systemd→系統服務啟動→登入介面。\n\n問題：是非題：請問以下描述是否正確？\nSSD固態硬碟比HDD機械硬碟讀寫速度更快，因為SSD沒有機械旋轉部件。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資訊安全CIA三元組：機密性（Confidentiality，確保資訊只有授權人員可存取）、完整性（Integrity，確保資訊未被未授權修改）、可用性（Availability，確保授權使用者可隨時存取）。這三個目標相互制衡，需要在安全性和可用性間取得平衡。\n對稱式加密使用相同金鑰加解密，速度快適合大量資料。常見算法：AES（Advanced Encryption Standard，128/192/256位元，目前業界標準）、3DES（DES的三重加密，已逐漸淘汰）、ChaCha20（適用於行動設備）。\n非對稱式加密使用公鑰/私鑰對：公鑰加密只有私鑰能解（加密傳輸用途）；私鑰簽名公鑰驗證（數位簽章用途）。常見算法：RSA（廣泛使用）、ECC（橢圓曲線，相同安全強度但金鑰更短，適合行動設備）。\n雜湊函數（Hash Function）將任意長度輸入轉為固定長度輸出，具備單向性（不可逆）和碰撞阻抗性。常見算法：MD5（128位元，已不安全）、SHA-1（160位元，已不安全）、SHA-256/SHA-3（目前安全）。\n數位簽章（Digital Signature）流程：傳送方用私鑰對訊息雜湊值簽名→接收方用傳送方公鑰驗證簽名。可驗證訊息來源（身份認證）和確保訊息未被竄改（完整性）。PKI（公鑰基礎設施）管理數位憑證。\n\n問題：單選題：下列哪種加密算法屬於對稱式加密？\n(a) RSA\n(b) ECC\n(c) Diffie-Hellman\n(d) AES",
+    "output": "(d) AES"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n常見Web應用攻擊：SQL注入（SQL Injection，操控資料庫）、XSS（Cross-Site Scripting，注入惡意腳本）、CSRF（Cross-Site Request Forgery，偽造跨站請求）、路徑遍歷（Path Traversal，讀取未授權檔案）、檔案上傳漏洞。\nXSS（跨站腳本攻擊）分為：儲存型（Stored XSS，惡意腳本儲存於伺服器）、反射型（Reflected XSS，惡意腳本在URL中反射）、DOM型（DOM-based XSS，在客戶端DOM中執行）。防範：輸出編碼、CSP（Content Security Policy）。\nCSRF（跨站請求偽造）誘使已登入使用者的瀏覽器向目標網站發送未授權請求。防範：CSRF Token（在表單中加入隨機token並驗證）、SameSite Cookie屬性、驗證Referer/Origin標頭、使用雙重提交Cookie。\nOWASP Top 10是Web應用程式安全風險清單，常見項目包含：Broken Access Control、Cryptographic Failures、Injection（SQL/NoSQL/LDAP）、Insecure Design、Security Misconfiguration、Vulnerable Components、Identification/Authentication Failures。\n滲透測試（Penetration Testing）流程：偵察（Reconnaissance）→掃描（Scanning）→漏洞分析（Vulnerability Analysis）→利用（Exploitation）→後期滲透（Post-Exploitation）→報告（Reporting）。工具：Nmap、Metasploit、Burp Suite、Wireshark。\n\n問題：是非題：請問以下描述是否正確？\n儲存型XSS（Stored XSS）的惡意腳本是儲存在伺服器端，每個造訪該頁面的使用者都會受到攻擊。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n密碼儲存最佳實踐：不可儲存明文密碼，應使用加鹽雜湊（Salted Hash）。常用密碼雜湊函數：bcrypt（自帶salt，成本因子可調整）、Argon2（密碼雜湊競賽冠軍）、scrypt、PBKDF2（NIST推薦）。不應使用MD5或SHA-1。\n多因素驗證（MFA）結合多種驗證因素：知識因素（密碼、PIN）、持有因素（手機OTP、硬體Token）、生物特徵（指紋、人臉、虹膜）。TOTP（Time-based OTP，如Google Authenticator）是常見的持有因素驗證方式。\n零信任架構（Zero Trust）核心理念：「永不信任，永遠驗證（Never Trust, Always Verify）」，不論使用者在內網或外網皆需驗證。實作要素：身份驗證、設備驗證、最小權限、微分段（Micro-segmentation）、持續監控。\n入侵偵測/防禦：IDS（Intrusion Detection System）偵測可疑活動並告警，為被動防禦；IPS（Intrusion Prevention System）主動阻擋攻擊。依偵測方式分為：特徵碼偵測（Signature-based）和異常偵測（Anomaly-based）。\n安全事件應變（Incident Response）流程：準備（Preparation）→識別（Identification）→遏制（Containment）→根除（Eradication）→復原（Recovery）→事後學習（Lessons Learned）。SIEM（Security Information and Event Management）用於集中收集和分析安全事件。\n\n問題：多選題：下列哪些屬於多因素驗證（MFA）的驗證因素類型？\n(a) 密碼（知識因素）\n(b) IP位址\n(c) 指紋（生物特徵）\n(d) 手機OTP（持有因素）\n(e) 使用者名稱",
+    "output": "(a) 密碼（知識因素）\n(c) 指紋（生物特徵）\n(d) 手機OTP（持有因素）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nPKI（Public Key Infrastructure，公鑰基礎設施）管理數位憑證。CA（Certificate Authority，憑證授權中心）負責簽發和撤銷憑證。X.509是最常見的憑證格式，包含持有者資訊、公鑰、有效期限和CA的數位簽章。\nTLS（Transport Layer Security）握手流程：(1)ClientHello（客戶端支援的加密套件）→(2)ServerHello（選定套件）+憑證→(3)客戶端驗證憑證→(4)金鑰交換（ECDHE等）→(5)ChangeCipherSpec→(6)加密通訊開始。\n常見加密套件（Cipher Suite）命名如：TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384，代表：金鑰交換（ECDHE）+ 身份認證（RSA）+ 對稱加密（AES-256-GCM）+ MAC演算法（SHA-384）。\nHTTPS憑證類型：DV（Domain Validation，只驗證域名擁有權）、OV（Organization Validation，驗證組織身份）、EV（Extended Validation，最嚴格的驗證，瀏覽器顯示組織名稱）。Let's Encrypt提供免費DV憑證。\n憑證透明度（Certificate Transparency, CT）要求CA將簽發的憑證記錄到公開日誌，使未授權憑證簽發可被偵測。HSTS（HTTP Strict Transport Security）強制瀏覽器使用HTTPS連接，防止降級攻擊。\n\n問題：單選題：TLS憑證中，哪種類型的驗證最嚴格，需要驗證組織的法律實體身份？\n(a) DV（Domain Validation）\n(b) OV（Organization Validation）\n(c) EV（Extended Validation）\n(d) SV（Server Validation）",
+    "output": "(c) EV（Extended Validation）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n惡意軟體（Malware）類型：病毒（Virus，附著於程式傳播）、蠕蟲（Worm，自我複製透過網路傳播）、木馬（Trojan，偽裝成合法程式）、勒索軟體（Ransomware，加密資料要求贖金）、間諜軟體（Spyware，竊取資訊）、廣告軟體（Adware）。\n社交工程攻擊（Social Engineering）利用心理手段欺騙人員洩露資訊或執行危險操作。常見形式：釣魚（Phishing，偽造Email）、語音釣魚（Vishing，電話詐騙）、簡訊釣魚（Smishing）、假冒身份（Impersonation）。\nAPT（Advanced Persistent Threat，進階持續性威脅）是長期潛伏的針對性攻擊，通常由國家級組織執行。特點：高度複雜、長期潛伏、目標明確（竊取機密或破壞關鍵基礎設施）。防禦需要縱深防禦（Defense in Depth）策略。\n弱點掃描（Vulnerability Scanning）自動化工具定期掃描系統，識別已知漏洞。常見工具：Nessus、OpenVAS、Qualys。CVE（Common Vulnerabilities and Exposures）是公開漏洞資料庫，CVSS評分（0-10）衡量漏洞嚴重程度。\n資料外洩防護（DLP, Data Loss Prevention）技術防止敏感資料外洩，監控網路傳輸、端點設備和雲端儲存。加密（Encryption at Rest和In Transit）保護資料。資料分類（Data Classification）確定敏感程度以套用適當保護措施。\n\n問題：是非題：請問以下描述是否正確？\n勒索軟體（Ransomware）的主要攻擊方式是竊取使用者的帳號密碼後出售。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n雲端服務模型：IaaS（Infrastructure as a Service）提供虛擬機器、儲存、網路，客戶管理OS以上；PaaS（Platform as a Service）提供開發平台，客戶管理應用程式和資料；SaaS（Software as a Service）提供完整應用，客戶只使用。\n主要雲端供應商：AWS（Amazon Web Services，市佔最大）、Azure（Microsoft）、GCP（Google Cloud Platform）。各家都提供計算、儲存、資料庫、AI/ML、網路等核心服務，支援多區域（Region）和可用區（Availability Zone）部署。\nAWS核心服務：EC2（虛擬機器）、S3（物件儲存）、RDS（關聯式資料庫）、Lambda（無伺服器函數）、VPC（虛擬私有雲）、IAM（身份存取管理）、ELB（負載均衡）、Auto Scaling（自動擴展）、CloudWatch（監控）。\n雲端安全責任共擔模型（Shared Responsibility Model）：雲端供應商負責「雲端的安全性」（實體基礎設施、網路、虛擬化層）；客戶負責「在雲端中的安全性」（OS更新、應用程式安全、資料保護、IAM設定）。\n基礎設施即代碼（IaC）用程式碼管理基礎設施，實現自動化和版本控制。工具：Terraform（多雲，宣告式）、AWS CloudFormation（AWS原生）、Ansible（程序式，適合設定管理）、Pulumi（用通用程式語言）。\n\n問題：單選題：根據雲端安全責任共擔模型，下列何者是客戶的責任範圍？\n(a) 實體資料中心的物理安全\n(b) 網路硬體的維護\n(c) 雲端上應用程式的安全設定\n(d) 虛擬化層的安全",
+    "output": "(c) 雲端上應用程式的安全設定"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n微服務架構（Microservices）將應用拆分為多個小型獨立服務，每個服務負責單一業務功能，可獨立部署和擴展。服務間透過API（REST/gRPC）或訊息佇列通訊。相較單體架構（Monolithic），微服務更靈活但增加分散式系統複雜性。\nCI/CD流程：CI（Continuous Integration）開發者頻繁提交程式碼，自動觸發建置和測試；CD（Continuous Delivery）自動將通過測試的程式碼部署至測試/暫存環境；Continuous Deployment自動部署至生產環境。工具：Jenkins、GitHub Actions、GitLab CI。\n訊息佇列（Message Queue）實現非同步通訊和服務解耦。生產者（Producer）發送訊息到佇列，消費者（Consumer）非同步處理。可削峰填谷應對流量突增。Apache Kafka是事件串流平台，RabbitMQ是AMQP訊息佇列，AWS SQS是雲端託管服務。\n高可用性（HA）設計：多可用區（Multi-AZ）部署防止單點故障、負載均衡分散流量、自動擴展動態調整資源、健康檢查自動替換故障實例、藍綠部署（Blue-Green Deployment）零停機更新、金絲雀部署（Canary Deployment）漸進式推出。\nCDN（Content Delivery Network）將靜態內容複製到全球邊緣節點，使用者從最近節點取得資料，降低延遲、提升速度、減輕原始伺服器負載。代表：Cloudflare、AWS CloudFront、Akamai。適合靜態資源、影片串流、大型下載。\n\n問題：是非題：請問以下描述是否正確？\n微服務架構相較於單體架構，雖然更靈活但也增加了分散式系統的複雜性。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n物件導向程式設計（OOP）四大核心：封裝（Encapsulation，將資料和方法綁定，隱藏實作細節）、繼承（Inheritance，子類別繼承父類別屬性和方法）、多型（Polymorphism，同一介面有不同實作）、抽象（Abstraction，隱藏複雜性）。\nSOLID設計原則：S（Single Responsibility，單一職責）、O（Open/Closed，開放封閉）、L（Liskov Substitution，里氏替換）、I（Interface Segregation，介面隔離）、D（Dependency Inversion，依賴反轉）。遵循SOLID有助於設計可維護的程式碼。\n設計模式（Design Patterns）分三類：創建型（Creational，如Singleton建立唯一實例、Factory隱藏建立邏輯、Builder逐步建立複雜物件）、結構型（Structural，如Adapter介面轉換）、行為型（Behavioral，如Observer事件通知）。\n常見演算法時間複雜度（Big O）：O(1)常數、O(log n)二分搜尋、O(n)線性搜尋、O(n log n)合併排序/快速排序平均、O(n²)氣泡排序/插入排序最差、O(2ⁿ)指數（如暴力解密）。選擇適當演算法對大規模資料效能影響巨大。\n版本控制Git工作流程：git clone（複製）→git checkout -b（建立分支）→開發→git add（暫存）→git commit（提交）→git push（推送）→建立Pull Request→Code Review→git merge（合併）→git tag（標籤版本）。\n\n問題：單選題：下列哪個物件導向概念是指「子類別繼承父類別的屬性和方法」？\n(a) 封裝\n(b) 多型\n(c) 繼承\n(d) 抽象",
+    "output": "(c) 繼承"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n常見排序演算法與複雜度：氣泡排序（Bubble Sort）O(n²)、選擇排序（Selection Sort）O(n²)、插入排序（Insertion Sort）O(n²)最差、合併排序（Merge Sort）O(n log n)穩定、快速排序（Quick Sort）平均O(n log n)最差O(n²)、堆積排序（Heap Sort）O(n log n)。\n資料結構特性：陣列（Array）O(1)隨機存取、O(n)插入刪除；鏈結串列（Linked List）O(1)插入刪除、O(n)搜尋；堆疊（Stack）LIFO後進先出；佇列（Queue）FIFO先進先出；二元搜尋樹（BST）平均O(log n)搜尋、插入、刪除。\n雜湊表（Hash Table）使用雜湊函數將鍵映射到位置，平均O(1)搜尋/插入/刪除。碰撞處理：鏈結法（Chaining，每個位置是鏈結串列）和開放定址法（Open Addressing，找下一個空位）。負載因子（Load Factor）過高需重新雜湊（Rehashing）。\n圖（Graph）演算法：BFS（廣度優先搜尋，使用佇列，找最短路徑）、DFS（深度優先搜尋，使用堆疊/遞迴）、Dijkstra（加權最短路徑，貪婪法）、Bellman-Ford（含負權重邊）、A*（啟發式搜尋）、拓撲排序（有向無環圖）。\n動態規劃（DP）透過記憶化（Memoization）或表格填充（Tabulation）避免重複計算，解決有最優子結構和重疊子問題的最佳化問題。經典例題：費氏數列、0/1背包問題、最長公共子序列（LCS）、最長遞增子序列（LIS）、編輯距離。\n\n問題：多選題：下列哪些排序演算法的平均時間複雜度為O(n log n)？\n(a) 氣泡排序\n(b) 合併排序\n(c) 選擇排序\n(d) 快速排序\n(e) 堆積排序",
+    "output": "(b) 合併排序\n(d) 快速排序\n(e) 堆積排序"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n網路協定TCP/IP模型分為四層：網路存取層負責實體傳輸，網際網路層處理路由（IP協定），傳輸層提供端對端服務（TCP/UDP），應用層提供網路應用服務。每層透過封裝和解封裝在通訊雙方交換資料。\n路由器（Router）在網路層根據路由表轉發封包至正確的網路介面。靜態路由由管理員手動設定，動態路由由OSPF、BGP等路由協定自動學習。路由器連接不同網段，是網際網路的核心設備。\n交換器（Switch）在資料連結層根據MAC位址表轉發資料框，只將資料送往目標設備的Port，比集線器（Hub）更有效率。三層交換器還具備路由功能，可在不同VLAN間路由流量。\nARP（Address Resolution Protocol）將IP位址解析為MAC位址，在同一網段內查詢目標設備的MAC位址。ARP快取表儲存IP-MAC對應關係，過期後重新查詢。ARP欺騙（ARP Spoofing）是中間人攻擊的常見手段。\nDHCP（Dynamic Host Configuration Protocol）自動分配IP位址給網路設備，包含：IP位址、子網路遮罩、預設閘道、DNS伺服器位址。DHCP流程：DISCOVER→OFFER→REQUEST→ACK。租約（Lease）到期需要更新。\n\n問題：多選題：下列哪些是Python程式語言的特性？\n(a) 動態型別\n(b) 靜態編譯\n(c) 縮排決定程式區塊\n(d) 強制宣告變數型別\n(e) 支援垃圾回收",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料庫索引加速查詢，B-Tree索引適合範圍查詢，Hash索引適合等值查詢。複合索引（Composite Index）在多個欄位上建立，查詢時需符合最左前綴原則（Leftmost Prefix Rule）才能有效使用索引。\n資料庫查詢最佳化：使用EXPLAIN分析查詢計劃、避免SELECT *、適當建立索引、避免在WHERE條件使用函數（導致索引失效）、大量資料分頁用LIMIT/OFFSET或游標（Cursor）方式。\n資料庫複寫（Replication）將資料複製到多個節點，提升可用性和讀取效能。主從複寫（Master-Slave）：寫入主節點，讀取可分散至從節點。主主複寫（Master-Master）兩個節點都可寫入，但需處理衝突。\n資料庫分區（Partitioning）將大型表格分割為更小的片段，提升查詢效能和管理效率。水平分區（Horizontal Partitioning）按行分割（如按日期），垂直分區（Vertical Partitioning）按欄位分割（常用欄位和不常用欄位分開）。\n資料庫監控指標：QPS（每秒查詢數）、連線數、慢查詢數量（Slow Query Log）、緩衝池命中率（Buffer Pool Hit Rate）、鎖等待時間、複寫延遲（Replication Lag）。定期ANALYZE/VACUUM（PostgreSQL）維護資料庫健康。\n\n問題：單選題：TCP三向交握的第二步，伺服器應回應哪種封包？\n(a) FIN-ACK\n(b) SYN-ACK\n(c) RST\n(d) ACK-FIN",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nLinux行程管理：每個行程有唯一的PID（Process ID），父行程用fork()建立子行程，子行程繼承父行程的環境。ps aux列出所有行程，top動態顯示，kill -9 PID強制終止，kill -15 PID請求終止。\nLinux檔案權限：chmod 755表示擁有者可讀寫執行（7=rwx），群組和其他人可讀執行（5=r-x）。特殊權限：SetUID（執行時用擁有者權限）、SetGID（執行時用群組權限）、Sticky Bit（只有擁有者能刪除自己的檔案）。\nShell腳本基礎：#!/bin/bash指定直譯器，變數以$符號存取，if/else/fi條件判斷，for/while迴圈，function定義函數。管道（|）將前一個指令的stdout傳給下一個指令。重新導向（>/>>/2>&1）控制輸入輸出。\nCron排程工作：crontab -e編輯排程，格式「分 時 日 月 週 指令」。例如「0 2 * * * /backup.sh」表示每天凌晨2點執行。特殊語法：@daily（每天）、@weekly（每週）、@reboot（開機時執行）。\n系統監控工具：top/htop（CPU/記憶體使用）、iostat（磁碟I/O）、netstat/ss（網路連線）、df（磁碟使用）、du（目錄大小）、free（記憶體）、vmstat（虛擬記憶體統計）、strace（追蹤系統呼叫）、lsof（開啟的檔案）。\n\n問題：是非題：請問以下描述是否正確？\nJavaScript是一種伺服器端專用的程式語言，無法在瀏覽器上執行。",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資訊安全管理系統（ISMS，ISO 27001）是國際標準，幫助組織建立、實施、維護和持續改進資訊安全管理。採用PDCA（Plan-Do-Check-Act）循環：風險評估→安全控制實施→監控稽核→持續改進。\n常見安全框架：NIST Cybersecurity Framework（識別、保護、偵測、回應、復原）、MITRE ATT&CK（攻擊戰術和技術知識庫）、CIS Controls（20個關鍵安全控制措施）、OWASP（Web應用安全最佳實踐）。\n個人資料保護：GDPR（歐盟一般資料保護規定）規範個資收集和處理，要求同意機制、資料可攜性、被遺忘權。台灣個人資料保護法規範類似，要求告知使用目的、安全維護措施、當事人權利保障。\n端點安全（Endpoint Security）保護終端設備：防毒軟體（Antivirus）偵測惡意程式、EDR（Endpoint Detection and Response）提供進階偵測和回應、MDM（Mobile Device Management）管理行動設備、DLP防止資料外洩。\n雲端安全工具：CASB（Cloud Access Security Broker，監控雲端服務使用）、CSPM（Cloud Security Posture Management，評估雲端設定合規性）、CWPP（Cloud Workload Protection Platform，保護雲端工作負載）。\n\n問題：單選題：Python中用來建立虛擬環境的指令是？\n(a) pip install virtualenv\n(b) python -m venv myenv\n(c) conda create env\n(d) npm init",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n物聯網（IoT，Internet of Things）將實體設備連接至網際網路，包含感測器、致動器和閘道器。IoT架構三層：感知層（設備）、網路層（傳輸）、應用層（平台）。常用協定：MQTT（輕量訊息）、CoAP（受限設備）、HTTP/REST。\n邊緣運算（Edge Computing）將計算和儲存資源移至靠近資料來源的邊緣節點，減少延遲和頻寬使用，適合即時處理需求。與霧運算（Fog Computing）類似，但邊緣運算更靠近終端設備，霧運算在中間層。\n人工智慧（AI）子領域：機器學習（ML）讓電腦從資料學習、深度學習（DL）使用多層神經網路、自然語言處理（NLP）處理人類語言、電腦視覺（CV）讓電腦理解圖像。監督式學習、非監督式學習、強化學習是主要學習範式。\n區塊鏈（Blockchain）是去中心化的分散式帳本，具備不可篡改性。工作量證明（PoW，Bitcoin使用）和權益證明（PoS，Ethereum已轉換）是主要共識機制。智能合約（Smart Contract）在區塊鏈上自動執行的程式碼。\n量子運算（Quantum Computing）利用量子力學特性（疊加、糾纏）進行計算，量子位元（Qubit）可同時為0和1。對現有加密（RSA、ECC）構成威脅，後量子密碼學（Post-Quantum Cryptography）已在發展中。\n\n問題：多選題：下列哪些是關聯式資料庫（RDBMS）的特性？\n(a) 使用SQL查詢語言\n(b) 資料以圖結構儲存\n(c) 支援ACID交易\n(d) 使用表格儲存資料\n(e) 預設不支援Join操作",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n網路拓樸（Network Topology）定義裝置的連接方式。匯流排型（Bus）所有裝置共享一條主幹線，碰撞域大；星型（Star）以交換器為中心，最常見；環型（Ring）資料單向傳遞；網狀型（Mesh）每個節點多條路徑，容錯性最高。\nDHCP（Dynamic Host Configuration Protocol）自動分配IP位址給網路設備。DHCP流程：DISCOVER（客戶端廣播尋找DHCP伺服器）→OFFER（伺服器提供IP）→REQUEST（客戶端請求）→ACK（伺服器確認）。租約到期需更新。\nARP（Address Resolution Protocol）將IPv4位址解析為MAC位址，運作在同一網段。ARP快取表（ARP Cache）儲存IP-MAC對應，過期重新查詢。ARP欺騙（ARP Spoofing）是常見的中間人攻擊手段，可用動態ARP檢測防禦。\n路由協定分類：IGP（Interior Gateway Protocol，域內路由）如OSPF（鏈路狀態）、RIP（距離向量）、EIGRP（混合型）；EGP（Exterior Gateway Protocol，域間路由）如BGP（Border Gateway Protocol，網際網路骨幹使用）。\nQoS（Quality of Service，服務品質）確保關鍵流量（如VoIP、視訊會議）的傳輸品質。技術包含：DSCP（Differentiated Services Code Point，封包標記）、流量整形（Traffic Shaping）、優先佇列（Priority Queuing）、頻寬保證。\n\n問題：單選題：DHCP協定的四步驟中，客戶端廣播尋找伺服器的第一步稱為？\n(a) OFFER\n(b) REQUEST\n(c) ACK\n(d) DISCOVER",
+    "output": "(d) DISCOVER"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n網路效能指標：頻寬（Bandwidth，最大傳輸速率）、吞吐量（Throughput，實際傳輸速率）、延遲（Latency，封包從來源到目的的時間）、抖動（Jitter，延遲的變化量）、封包遺失率（Packet Loss Rate）。這些指標影響使用者體驗。\nSDN（Software Defined Networking）將網路控制平面與資料平面分離，由OpenFlow等協定讓集中式控制器管理交換器轉發規則。NFV（Network Functions Virtualization）將防火牆、路由器等網路功能虛擬化，在通用伺服器上執行。\n網路監控協定：SNMP（Simple Network Management Protocol）用於監控和管理網路設備，管理站（NMS）向代理（Agent）查詢MIB中的資訊。Syslog協定將設備日誌傳送至集中日誌伺服器。NetFlow分析網路流量統計。\n802.11無線安全協定：WEP（有線等效保密，已破解不安全）→WPA（Wi-Fi Protected Access，使用TKIP）→WPA2（使用AES-CCMP，目前主流）→WPA3（2018年推出，SAE取代PSK，更安全）。企業版使用802.1X認證。\nIPv6優勢：位址空間巨大（128位元，約3.4×10³⁸）、內建IPSec支援、無需NAT（每個設備可有公有IPv6位址）、無廣播（使用多播Multicast取代）、SLAAC（無狀態位址自動設定）、簡化的封包標頭。過渡機制：雙堆疊、隧道。\n\n問題：是非題：請問以下描述是否正確？\nWEP（有線等效保密）是目前最安全的Wi-Fi加密協定，廣泛應用於企業環境。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n負載均衡（Load Balancer）將流量分散至多台伺服器，避免單點過載，提高可用性和擴展性。算法：輪詢（Round Robin）、加權輪詢（Weighted Round Robin）、最少連線（Least Connections）、IP雜湊（IP Hash，同一IP固定到同一伺服器）。\n反向代理（Reverse Proxy）代表後端伺服器接收客戶端請求，提供負載均衡、SSL終止、快取、壓縮等功能。常用工具：Nginx、HAProxy、AWS ALB/CLB。正向代理（Forward Proxy）代表客戶端向目標伺服器發送請求。\nHTTP狀態碼：1xx（資訊性）、2xx（成功，200 OK、201 Created）、3xx（重新導向，301永久、302暫時）、4xx（客戶端錯誤，400 Bad Request、401 Unauthorized、403 Forbidden、404 Not Found）、5xx（伺服器錯誤，500 Internal Server Error）。\nWebSocket協定提供全雙工（Full-duplex）通訊，在HTTP握手升級後建立持久連線，伺服器可主動推送資料給客戶端。適用場景：即時聊天、股票行情、線上遊戲、協作工具。HTTP/2和HTTP/3（QUIC）改善HTTP的多路複用效能。\ngRPC是Google開發的高效能RPC框架，使用Protocol Buffers（Protobuf）序列化，基於HTTP/2。相較REST API：效能更高（二進位格式）、支援雙向串流、強型別介面、自動生成客戶端代碼。適合微服務間的高效能通訊。\n\n問題：多選題：下列哪些HTTP狀態碼代表客戶端錯誤？\n(a) 200\n(b) 301\n(c) 400\n(d) 403\n(e) 404",
+    "output": "(c) 400\n(d) 403\n(e) 404"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料庫查詢最佳化技巧：使用EXPLAIN分析執行計劃（Full Table Scan表示缺少索引）、避免SELECT *（只查需要的欄位）、在WHERE條件欄位建立索引（避免對欄位使用函數）、適當使用覆蓋索引（Covering Index，查詢結果全在索引中）。\n資料庫複寫（Replication）將資料同步至多個節點：主從複寫（Master-Slave，寫主讀從）可分散讀取負載；同步複寫（Synchronous）確保資料一致性但影響寫入效能；非同步複寫（Asynchronous）效能好但存在複寫延遲風險。\n時序資料庫（Time Series Database, TSDB）專為帶有時間戳記的資料設計，支援高效的時間範圍查詢和聚合。常見產品：InfluxDB、TimescaleDB（基於PostgreSQL）、Prometheus（監控指標）、OpenTSDB。適合IoT感測器、應用監控、金融數據。\n全文搜尋（Full-Text Search）在大量文字中搜尋關鍵字，比LIKE查詢效率高。技術：倒排索引（Inverted Index，記錄詞彙出現在哪些文件）。Elasticsearch是分散式全文搜尋引擎，基於Lucene，支援近即時搜尋和聚合分析。\n資料庫遷移（Migration）是將資料庫架構或資料從一個版本遷移至另一個版本的過程。工具：Flyway、Liquibase（追蹤schema變更）。藍綠部署和滾動更新（Rolling Update）是常見的無停機遷移策略，需要前向相容的schema設計。\n\n問題：是非題：請問以下描述是否正確？\n倒排索引（Inverted Index）是全文搜尋引擎的核心資料結構，記錄每個詞彙出現在哪些文件中。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nNewSQL資料庫結合了RDBMS的ACID特性和NoSQL的水平擴展性。代表產品：Google Spanner（全球分散式）、CockroachDB（開源）、TiDB（MySQL相容，水平擴展）、YugabyteDB。適合需要強一致性且需要水平擴展的場景。\n資料湖（Data Lake）儲存大量原始資料（結構化、半結構化、非結構化），延遲到分析時再決定資料格式（Schema-on-Read）。與資料倉儲的差別：資料湖保留原始資料，彈性高；資料倉儲只存已整理的結構化資料。\nApache Spark是大數據處理框架，使用記憶體計算（In-Memory Computing）比Hadoop MapReduce快10-100倍。支援批次處理（Batch Processing）和串流處理（Streaming）。SparkSQL、MLlib（機器學習）是常用元件。\n資料庫連線管理：連線池大小設定影響效能（過小造成等待，過大耗費資源）。連線逾時（Connection Timeout）、閒置逾時（Idle Timeout）需適當設定。長時間不用的連線應釋放，避免資料庫端達到最大連線數上限。\n物化視圖（Materialized View）是儲存查詢結果的實體資料表（非虛擬），可大幅加速複雜查詢，但需要定期更新（Refresh）以反映底層資料變更。適合複雜報表查詢，在資料倉儲和OLAP場景中廣泛使用。\n\n問題：單選題：下列哪種技術結合了RDBMS的ACID特性與NoSQL的水平擴展能力？\n(a) Redis\n(b) MongoDB\n(c) NewSQL（如CockroachDB）\n(d) Elasticsearch",
+    "output": "(c) NewSQL（如CockroachDB）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料品質（Data Quality）的六個維度：準確性（Accuracy）、完整性（Completeness）、一致性（Consistency）、及時性（Timeliness）、唯一性（Uniqueness）、有效性（Validity）。資料治理（Data Governance）確保資料品質和安全。\nOLAP多維分析操作：下鑽（Drill-Down，從粗粒度到細粒度）、上捲（Roll-Up，從細粒度到粗粒度）、切片（Slice，固定一個維度）、切塊（Dice，固定多個維度）、轉軸（Pivot，改變維度排列方式）。\nLambda架構用於大數據處理：批次層（Batch Layer，處理歷史資料，高精度）+ 速度層（Speed Layer，即時處理新資料，低延遲）+ 服務層（Serving Layer，合併結果提供查詢）。Kappa架構簡化為只用串流處理。\n圖資料庫（Graph Database）以節點（Node）和邊（Edge）儲存資料，適合複雜關係分析。Neo4j使用Cypher查詢語言，Amazon Neptune支援Gremlin和SPARQL。應用場景：社群網路分析、詐欺偵測、推薦系統、知識圖譜。\n資料庫效能調優（Database Tuning）層面：硬體層（SSD、記憶體擴充）、OS層（I/O排程、虛擬記憶體）、資料庫設定層（Buffer Pool、連線數、日誌設定）、Schema設計層（正規化、索引）、查詢層（SQL優化、執行計劃）。\n\n問題：多選題：下列哪些是衡量資料品質的常見維度？\n(a) 準確性（Accuracy）\n(b) 索引數量\n(c) 完整性（Completeness）\n(d) 唯一性（Uniqueness）\n(e) 查詢速度",
+    "output": "(a) 準確性（Accuracy）\n(c) 完整性（Completeness）\n(d) 唯一性（Uniqueness）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nRAID（Redundant Array of Independent Disks）提供磁碟冗餘和效能提升。RAID 0（條帶化，效能好但無冗餘）、RAID 1（鏡像，高可用但容量減半）、RAID 5（分散式奇偶校驗，可容許一顆磁碟故障）、RAID 10（結合RAID 1+0，高效能高可用）。\nLinux套件管理：Debian系（Ubuntu）使用apt（apt install/remove/update/upgrade）和dpkg；Red Hat系（CentOS/RHEL）使用yum/dnf和rpm。容器化後，應用程式的依賴套件封裝在映像中，解決「在我的機器上能跑」問題。\n系統效能監控：CPU使用率（top/htop/mpstat）、記憶體使用（free/vmstat）、磁碟I/O（iostat/iotop）、網路流量（iftop/nethogs/ss）、系統負載（load average，1/5/15分鐘平均等待執行的行程數）。\n核心（Kernel）是作業系統的核心，直接與硬體互動。單體核心（Monolithic Kernel，如Linux）所有核心服務在同一位址空間，效能高。微核心（Microkernel，如MINIX）只有最基本功能在核心，其他服務在使用者空間，更穩定但效能較低。\n作業系統的啟動管理器：Linux的GRUB2支援多重開機選擇、核心參數設定。systemd是現代Linux的初始化系統（init system），管理系統服務（Unit）、平行化啟動（加快開機速度）、日誌（journald）、掛載點（mount）。\n\n問題：單選題：RAID 5最少需要幾顆磁碟，且可以容許一顆磁碟故障？\n(a) 2顆\n(b) 3顆\n(c) 4顆\n(d) 6顆",
+    "output": "(b) 3顆"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n行程狀態（Process State）轉換：New（剛建立）→Ready（等待CPU）→Running（正在執行）→Waiting/Blocked（等待I/O或事件）→Terminated（已結束）。上下文切換（Context Switch）保存和恢復行程狀態，由排程器（Scheduler）觸發。\n記憶體映射（Memory Mapping）讓行程將檔案或設備映射到虛擬位址空間，透過記憶體存取直接讀寫檔案，比傳統read/write系統呼叫更高效。mmap()是POSIX的記憶體映射系統呼叫，常用於大型資料庫和高效能應用。\n嵌入式作業系統（RTOS，Real-Time Operating System）具備確定性回應時間，適用於工業控制、醫療設備等即時應用。常見RTOS：FreeRTOS（開源免費）、VxWorks（商業）、QNX（汽車電子）。硬即時系統（Hard Real-Time）不允許錯過截止時間。\nLinux Namespace提供行程隔離機制，是容器技術的基礎。PID Namespace（隔離行程ID）、Network Namespace（隔離網路）、Mount Namespace（隔離檔案系統掛載）、User Namespace（隔離使用者ID）、UTS Namespace（隔離主機名稱）。\nCgroup（Control Groups）是Linux核心功能，限制和隔離行程使用的系統資源（CPU、記憶體、磁碟I/O、網路頻寬）。Docker和Kubernetes利用Namespace和Cgroup實現容器隔離和資源限制，是容器技術的兩大核心Linux機制。\n\n問題：是非題：請問以下描述是否正確？\nLinux的Namespace和Cgroup是實現容器隔離與資源限制的兩大核心機制。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n儲存區域網路（SAN，Storage Area Network）透過高速專用網路（如Fibre Channel）將儲存設備連接至伺服器，提供區塊層級（Block-level）存取，適合資料庫等高效能I/O需求。NAS（Network Attached Storage）提供檔案層級存取。\n記憶體類型：DRAM（Dynamic RAM，主記憶體，需定期更新，便宜）、SRAM（Static RAM，快取記憶體，速度快成本高）、Flash（NAND Flash，SSD和USB使用，非揮發性）、HBM（High Bandwidth Memory，高頻寬記憶體，用於GPU）。\n作業系統安全機制：DAC（Discretionary Access Control，自主存取控制，如Unix/Windows的檔案權限）、MAC（Mandatory Access Control，強制存取控制，如SELinux）、RBAC（Role-Based Access Control，角色存取控制）。\n日誌（Logging）是系統監控和故障排除的重要工具。Linux系統日誌：/var/log/syslog（系統事件）、/var/log/auth.log（認證）、/var/log/kern.log（核心訊息）。journald是systemd的日誌系統，用journalctl查看。\n磁碟加密保護靜態資料：全磁碟加密（FDE，Full Disk Encryption，如BitLocker、FileVault）對整個磁碟加密；檔案系統加密（如eCryptfs）；資料庫透明加密（TDE，Transparent Data Encryption）。加密不影響正常使用但防止實體竊取。\n\n問題：多選題：下列哪些是作業系統常見的存取控制模型？\n(a) DAC（自主存取控制）\n(b) RAID\n(c) MAC（強制存取控制）\n(d) RBAC（角色存取控制）\n(e) VLAN",
+    "output": "(a) DAC（自主存取控制）\n(c) MAC（強制存取控制）\n(d) RBAC（角色存取控制）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nOWASP Top 10（2021版）：Broken Access Control（#1）、Cryptographic Failures（#2）、Injection（#3，含SQL/NoSQL/LDAP）、Insecure Design（#4）、Security Misconfiguration（#5）、Vulnerable Components（#6）、Authentication Failures（#7）。\nCVE（Common Vulnerabilities and Exposures）是公開漏洞資料庫，每個漏洞有唯一識別碼（如CVE-2021-44228即Log4Shell）。CVSS（Common Vulnerability Scoring System）評分0-10衡量嚴重度：Low（0-3.9）、Medium（4-6.9）、High（7-8.9）、Critical（9-10）。\n威脅建模（Threat Modeling）在設計階段識別安全風險，STRIDE框架分析：Spoofing（仿冒身份）、Tampering（篡改資料）、Repudiation（否認行為）、Information Disclosure（資訊洩露）、Denial of Service（阻斷服務）、Elevation of Privilege（提權）。\n加密貨幣錢包安全：私鑰控制資金，助記詞（Mnemonic Phrase，12-24個單字）用於備份還原。硬體錢包（Hardware Wallet，如Ledger）在離線設備中儲存私鑰，防止網路攻擊。多重簽名（Multi-sig）要求多把私鑰共同簽署交易。\n零知識證明（Zero-Knowledge Proof，ZKP）允許一方（Prover）向另一方（Verifier）證明知道某個秘密，而不洩露秘密本身。應用：隱私保護的身份驗證、區塊鏈隱私交易（如Zcash）。zk-SNARK是常見的ZKP實作方式。\n\n問題：單選題：STRIDE威脅建模框架中，「S」代表哪種威脅類型？\n(a) SQL Injection\n(b) Spoofing（仿冒身份）\n(c) Scanning\n(d) Session Hijacking",
+    "output": "(b) Spoofing（仿冒身份）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n密碼學中的前向保密（Forward Secrecy/Perfect Forward Secrecy，PFS）確保即使長期金鑰洩露，過去的加密通訊也無法被解密。透過每次連線生成臨時金鑰（Ephemeral Key）實現，TLS使用ECDHE（Ephemeral ECDH）支援PFS。\n勒索軟體（Ransomware）攻擊流程：入侵（釣魚郵件/漏洞利用）→橫向移動（擴散至更多主機）→資料竊取（Double Extortion，雙重勒索）→加密檔案→要求贖金（通常用加密貨幣）。防範：定期備份（3-2-1原則）、離線備份、修補漏洞。\n供應鏈攻擊（Supply Chain Attack）攻擊軟體供應鏈中的弱點（開源套件、建置工具、第三方廠商）來感染使用者。著名案例：SolarWinds攻擊、Log4Shell漏洞、npm惡意套件。防範：軟體物料清單（SBOM）、依賴掃描、最小信任原則。\n資安事件回應（Incident Response）六步驟：準備（Preparation，建立IR計劃）→識別（Identification，偵測確認事件）→遏制（Containment，阻止擴散）→根除（Eradication，移除威脅）→復原（Recovery，恢復正常運作）→事後改進（Lessons Learned）。\n身份與存取管理（IAM，Identity and Access Management）：AuthN（Authentication，身份驗證，你是誰）vs AuthZ（Authorization，授權，你能做什麼）。SSO（Single Sign-On）一次登入存取多個系統，OAuth 2.0和OIDC是常見的授權協定。\n\n問題：是非題：請問以下描述是否正確？\n前向保密（Perfect Forward Secrecy）透過每次連線使用臨時金鑰，確保即使長期金鑰洩露，過去通訊仍無法被解密。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n蜜罐（Honeypot）是設計來吸引攻擊者的誘餌系統，用於研究攻擊手法或浪費攻擊者時間。蜜網（Honeynet）是多個蜜罐組成的網路。誘餌檔案（Canary Token）在文件或憑證中埋入追蹤標記，一旦被存取即告警。\n安全資訊和事件管理（SIEM，Security Information and Event Management）集中收集、關聯和分析安全日誌，提供即時告警和合規報告。代表產品：Splunk、IBM QRadar、Microsoft Sentinel、Elastic SIEM。SOAR（Security Orchestration）進一步自動化回應。\n漏洞披露（Vulnerability Disclosure）政策：協調式披露（Coordinated Disclosure/Responsible Disclosure）是研究者先通知廠商，給予修補時間後再公開；全面披露（Full Disclosure）立即公開；Bug Bounty程式鼓勵研究者報告漏洞以獲得獎勵。\n量子運算對加密的威脅：Shor's Algorithm可在多項式時間內破解RSA和ECC（影響非對稱加密）；Grover's Algorithm對對稱加密有平方根加速效果（AES-256降至AES-128等效安全性）。NIST已選定後量子密碼學標準（CRYSTALS-Kyber、CRYSTALS-Dilithium）。\nDevSecOps將安全整合進DevOps流程每個階段：設計階段威脅建模→開發階段安全編碼和SAST（靜態程式碼分析）→建置階段依賴掃描（SCA）→測試階段DAST（動態測試）→部署階段基礎設施掃描→運維階段持續監控和RASP（執行時保護）。\n\n問題：多選題：下列哪些是漏洞披露的方式？\n(a) 協調式披露（Responsible Disclosure）\n(b) 反向工程\n(c) 全面披露（Full Disclosure）\n(d) Bug Bounty程式\n(e) 社交工程",
+    "output": "(a) 協調式披露（Responsible Disclosure）\n(c) 全面披露（Full Disclosure）\n(d) Bug Bounty程式"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n函數式程式設計（FP）核心概念：純函數（Pure Function，相同輸入永遠相同輸出，無副作用）、不可變性（Immutability，資料不可修改只能建立新資料）、高階函數（接受或回傳函數）、函數組合（Function Composition）、懶惰求值（Lazy Evaluation）。\n非同步程式設計（Asynchronous Programming）：Callback（回調函數，容易產生Callback Hell）→Promise（解決巢狀回調）→Async/Await（讓非同步程式碼看起來像同步）。事件迴圈（Event Loop）是JavaScript的非同步處理核心機制。\n型別系統（Type System）：靜態型別（如Java、C++、Go、Rust，編譯時檢查）vs 動態型別（如Python、JavaScript、Ruby，執行時檢查）。強型別（如Python，不允許隱式轉換）vs 弱型別（如JavaScript，允許隱式轉換）。\n記憶體管理：手動管理（如C/C++，malloc/free，高效能但易發生記憶體洩漏）、垃圾回收（GC，如Java/Python，自動管理但有GC暫停）、所有權系統（如Rust，編譯期確保記憶體安全，零成本抽象）。\n軟體測試：單元測試（Unit Test，測試最小功能單元）、整合測試（Integration Test）、端對端測試（E2E，模擬使用者操作）、效能測試（Performance/Load Test）、模糊測試（Fuzzing，隨機輸入測試）。測試覆蓋率（Code Coverage）衡量測試完整度。\n\n問題：單選題：下列哪種程式語言使用所有權系統（Ownership System）在編譯期確保記憶體安全？\n(a) Python\n(b) Java\n(c) Go\n(d) Rust",
+    "output": "(d) Rust"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nRESTful API設計原則：使用HTTP方法表達操作（GET讀取、POST建立、PUT完整更新、PATCH部分更新、DELETE刪除）、URL代表資源（名詞，如/users/123）、無狀態（Stateless，每次請求帶完整資訊）、統一介面（Uniform Interface）。\nGraphQL與REST比較：GraphQL客戶端可精確指定所需欄位（避免Over-fetching過度取得和Under-fetching取得不足）、單一端點、強型別Schema、支援訂閱（Subscription，即時更新）。REST成熟生態和快取較容易。各有適用場景。\n微前端（Micro Frontend）將前端應用拆分為多個獨立可部署的模組，由不同團隊開發，在運行時組合。實作方式：iframe、Web Components、Module Federation（Webpack 5）。前端框架：React（Facebook）、Vue、Angular（Google）、Svelte。\n程式碼品質工具：靜態分析（ESLint、Pylint、SonarQube，分析程式碼不執行）、格式化（Prettier、Black）、型別檢查（TypeScript、mypy）、Code Review（人工審查）。技術債（Technical Debt）是快速開發帶來的品質問題，需定期還清。\nAPI版本管理策略：URL版本（/v1/users）、查詢參數（?version=1）、Header版本（Accept: application/vnd.api+json;version=1）、語意化版本（Semantic Versioning，MAJOR.MINOR.PATCH）。向後相容（Backward Compatible）設計減少破壞性變更。\n\n問題：是非題：請問以下描述是否正確？\nRESTful API設計中，URL應使用動詞（如/getUser、/deletePost）來明確表達操作意圖。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nCI/CD最佳實踐：分支策略（GitFlow、GitHub Flow、Trunk-Based Development）、自動化測試門檻（Test Coverage要求）、不可變的建置產物（Immutable Artifact）、環境一致性（Dev/Staging/Prod使用相同映像檔）、藍綠部署、金絲雀發布。\n程式設計典範（Paradigm）：命令式（Imperative，告訴電腦怎麼做）、宣告式（Declarative，告訴電腦要什麼，如SQL、HTML）、物件導向（OOP）、函數式（FP）、事件驅動（Event-Driven）、響應式（Reactive，如RxJava、RxJS）。\n依賴注入（Dependency Injection，DI）是一種設計模式，將物件的依賴從外部注入而非在內部建立，提高模組化和可測試性。IoC（Inversion of Control，控制反轉）是更廣泛的概念。常見DI框架：Spring（Java）、Angular（內建）、FastAPI（Python）。\n程式語言效能：C/C++（最高效能，直接操作記憶體）、Rust（高效能+記憶體安全）、Go（高效能+並發設計+GC）、Java/C#（JIT編譯，效能良好）、Python/JavaScript（直譯語言，效能較低但開發快速）。選擇取決於應用需求。\n架構模式：MVC（Model-View-Controller）、MVP（Model-View-Presenter）、MVVM（Model-View-ViewModel，如Angular/Vue）、Clean Architecture（依賴規則，業務邏輯不依賴框架）、Hexagonal Architecture（Ports and Adapters，核心與外部系統隔離）。\n\n問題：多選題：下列哪些是常見的程式設計典範（Programming Paradigm）？\n(a) 物件導向程式設計（OOP）\n(b) 二進位程式設計\n(c) 函數式程式設計（FP）\n(d) 宣告式程式設計\n(e) 事件驅動程式設計",
+    "output": "(a) 物件導向程式設計（OOP）\n(c) 函數式程式設計（FP）\n(d) 宣告式程式設計\n(e) 事件驅動程式設計"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n雲端成本最佳化：Reserved Instance（預留執行個體，承諾1-3年，可省30-60%）、Spot/Preemptible Instance（競價執行個體，最省但隨時可能中斷）、Auto Scaling（按需擴縮）、Right-sizing（選擇適當規格）、儲存分層（常用/不常用資料分開儲存）。\nServerless架構優缺點：優點（無需管理伺服器、自動擴展、按使用量計費、快速部署）；缺點（冷啟動延遲、狀態管理複雜、除錯困難、供應商鎖定、執行時間限制）。適合事件驅動的短暫工作負載，不適合長時間運行的任務。\n服務網格（Service Mesh）管理微服務間的通訊，提供：流量管理（負載均衡、流量分割）、可觀測性（追蹤、指標、日誌）、安全性（mTLS，服務間加密）、故障注入（Chaos Testing）。代表：Istio、Linkerd。Sidecar模式是常見實作方式。\n可觀測性（Observability）三大支柱：指標（Metrics，如CPU使用率、請求速率，用Prometheus收集）、日誌（Logs，事件記錄，用ELK Stack或Grafana Loki收集）、追蹤（Traces，分散式請求追蹤，用Jaeger或Zipkin）。\nGitOps是以Git為單一事實來源（Single Source of Truth）的基礎設施和應用程式部署方式，透過Pull Request管理變更，自動化工具（如ArgoCD、Flux）監控Git倉庫並同步至叢集。實現可審計、可回滾的部署流程。\n\n問題：單選題：Spot Instance（競價執行個體）最主要的特點為何？\n(a) 提供最高效能保證\n(b) 成本最低但可能隨時被中斷\n(c) 支援最長的執行時間\n(d) 提供固定IP位址",
+    "output": "(b) 成本最低但可能隨時被中斷"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n混沌工程（Chaos Engineering）透過故意注入故障（斷網、殺死行程、CPU滿載）測試系統韌性，驗證系統在真實故障條件下的行為。Netflix的Chaos Monkey是先驅工具。原則：在生產環境進行（也可先在測試環境）、監控異常、最小化影響範圍。\nFinOps（Cloud Financial Operations）是管理和最佳化雲端費用的實踐，結合財務、工程和業務團隊。關鍵實踐：資源標籤（Tagging，追蹤成本歸屬）、成本可視化（Cost Dashboard）、使用量預測、廢棄資源清理、工作負載排程（非尖峰關機）。\n多雲（Multi-Cloud）策略在多個雲端供應商部署應用，避免供應商鎖定（Vendor Lock-in）、提高可用性。挑戰：複雜度增加、資料主權（Data Sovereignty）、不同API和工具集。Kubernetes有助於實現跨雲一致性。\n邊緣運算（Edge Computing）將計算推向靠近資料來源處，減少延遲和頻寬消耗。應用：自動駕駛（本地即時決策）、工業IoT（工廠自動化）、AR/VR（低延遲渲染）、5G MEC（多接入邊緣計算）。與雲端運算互補，形成雲-邊-端架構。\nPlatform Engineering為開發者提供自助式的內部開發平台（IDP，Internal Developer Platform），抽象化底層基礎設施複雜性，讓開發者專注於業務邏輯。工具：Backstage（Spotify開源）、Crossplane、Port。降低認知負擔（Cognitive Load）是核心目標。\n\n問題：是非題：請問以下描述是否正確？\n混沌工程（Chaos Engineering）的目的是透過主動注入故障來測試和提升系統的韌性。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nSite Reliability Engineering（SRE）由Google提出，將軟體工程實踐應用於IT運維。核心概念：SLI（Service Level Indicator，服務指標）、SLO（Service Level Objective，服務目標）、SLA（Service Level Agreement，服務協議）、Error Budget（錯誤預算，允許的不可用時間）。\nToil（例行苦差）是SRE要最小化的重複手動工作，透過自動化解決。SRE工程師時間應50%用於運維，50%用於開發自動化工具。On-call（值班）制度配合Runbook（操作手冊）和後驗（Post-mortem，無責任文化的事後分析）。\n可靠性設計模式：斷路器（Circuit Breaker，防止級聯故障）、重試（Retry with Exponential Backoff）、逾時（Timeout）、艙壁（Bulkhead，隔離不同資源池）、背壓（Backflow，上游慢下來保護下游）、降級（Graceful Degradation）。\n災難恢復指標：RTO（Recovery Time Objective，可接受的最長恢復時間，影響成本）、RPO（Recovery Point Objective，可接受的最大資料遺失量，影響備份頻率）。RTO和RPO越低，成本越高，需根據業務需求權衡。\n監控告警最佳實踐：告警應可操作（Actionable，有明確的處理步驟）、避免告警疲勞（Alert Fatigue，過多誤報導致忽視真實問題）、設定合適閾值（基於SLO而非憑感覺）、分層嚴重度（Critical/Warning/Info）、建立On-call Runbook。\n\n問題：多選題：SRE核心概念中，下列哪些是衡量服務等級的關鍵術語？\n(a) SLI（服務等級指標）\n(b) RAID\n(c) SLO（服務等級目標）\n(d) SLA（服務等級協議）\n(e) VLAN",
+    "output": "(a) SLI（服務等級指標）\n(c) SLO（服務等級目標）\n(d) SLA（服務等級協議）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n微服務間通訊：同步通訊（REST/gRPC，即時呼叫，服務需同時在線）vs 非同步通訊（訊息佇列如Kafka/RabbitMQ，解耦合，容錯性高）。服務發現（Service Discovery）讓微服務動態找到其他服務，如Consul、Eureka、Kubernetes Service。\nAPI閘道（API Gateway）是微服務前端的統一入口，提供：路由（將請求轉發至正確服務）、認證授權（JWT驗證）、限流（Rate Limiting）、負載均衡、快取、請求轉換、監控日誌。常用：Kong、AWS API Gateway、Nginx。\n服務網格（Service Mesh）中的Sidecar模式：每個服務實例旁邊部署一個Proxy（如Envoy），Proxy攔截所有入出流量，提供流量管理、可觀測性和安全性，無需修改應用程式碼。控制平面（Control Plane）集中管理所有Sidecar。\nSaga模式處理分散式交易，每個本地交易執行後發布事件觸發下一步，失敗時執行補償交易（Compensating Transaction）回滾。兩種實現：編排式Saga（Orchestration，集中控制器）、協調式Saga（Choreography，事件驅動）。\n分散式追蹤（Distributed Tracing）追蹤請求在多個微服務間的完整路徑，用於效能分析和故障排除。每個請求有唯一Trace ID，在服務間傳遞。OpenTelemetry是標準化的可觀測性框架，整合指標、日誌和追蹤。\n\n問題：單選題：下列關於Python語言的描述，何者正確？\n(a) Python是靜態型別語言\n(b) Python使用大括號{}定義程式區塊\n(c) Python的GIL允許多執行緒真正並行執行CPU密集任務\n(d) Python是直譯型語言",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n容器安全：映像掃描（Image Scanning，使用Trivy、Clair掃描CVE漏洞）、最小化基礎映像（如使用Distroless或Alpine）、非root使用者執行容器、唯讀根檔案系統、限制系統呼叫（Seccomp）、Pod Security Standards（Kubernetes安全政策）。\nK8s RBAC（Role-Based Access Control）控制對K8s API的存取：Role（定義命名空間內的權限）、ClusterRole（叢集層級）、RoleBinding（將Role綁定至使用者/ServiceAccount）、ClusterRoleBinding。最小權限原則（Least Privilege）是核心設計理念。\nKubernetes網路策略（NetworkPolicy）控制Pod間的流量，預設所有Pod可互相通訊，NetworkPolicy實現微分段。雲端原生網路（CNI插件）如Calico、Cilium、Flannel實現Pod網路和NetworkPolicy。Cilium使用eBPF實現高效能網路控制。\nHelm是Kubernetes的套件管理器，使用Chart（包含K8s manifest的可重複使用套件）封裝應用程式。Helm Release追蹤部署，支援版本管理和回滾。Helmfile管理多個Helm Release。Kustomize是另一種K8s設定管理工具，使用覆疊（Overlay）模式。\neBPF（Extended Berkeley Packet Filter）讓程式在Linux核心中安全執行，無需修改核心原始碼。應用：網路效能監控（觀測網路流量）、安全（系統呼叫過濾）、可觀測性（低開銷的效能分析）。Cilium和Falco是基於eBPF的雲端原生安全工具。\n\n問題：是非題：請問以下描述是否正確？\nHTML（HyperText Markup Language）是一種程式語言，可以用來實作條件判斷和迴圈邏輯。",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n可觀測性實踐：RED指標（Rate請求速率、Errors錯誤率、Duration延遲）用於服務監控；USE指標（Utilization使用率、Saturation飽和度、Errors錯誤）用於資源監控。SLO驅動的告警（基於症狀而非原因）減少無效告警。\n平台工程（Platform Engineering）的Golden Path是平台工程師為開發者設計的最佳實踐路徑，提供模板、腳手架和自動化工具，讓開發者快速建立符合最佳實踐的服務。降低開發者認知負擔（Cognitive Load）是核心目標。\nFinOps成熟度模型分三階段：爬行（Crawl，建立基礎可視化）→行走（Walk，最佳化和自動化）→跑步（Run，持續最佳化和預測）。單位經濟學（Unit Economics，如每用戶成本）幫助業務理解雲端投資報酬率（ROI）。\n可靠性與彈性：冪等性（Idempotency，相同操作執行多次結果相同，適合安全重試）、至少一次（At-least-once delivery）vs 恰好一次（Exactly-once，最難保證）。分散式系統中的時鐘同步問題（NTP、Google Spanner的TrueTime）。\nOpenTelemetry（OTel）是CNCF專案，提供統一的可觀測性標準：SDK（多語言支援）、Collector（收集、處理和匯出遙測資料）、Protocol（OTLP）。整合Prometheus（指標）、Jaeger（追蹤）、多種日誌後端。避免供應商鎖定。\n\n問題：多選題：下列哪些屬於機器學習的學習範式？\n(a) 監督式學習\n(b) 非監督式學習\n(c) 強化學習\n(d) 編譯式學習\n(e) 直譯式學習",
+    "output": "根據現有資料無法回答"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nOSI模型七層由下至上：實體層、資料連結層、網路層、傳輸層、會話層、表示層、應用層。\nTCP/IP模型四層：網路存取層（對應OSI 1-2層）、網際網路層（第3層）、傳輸層（第4層）、應用層（第5-7層）。\nHTTP、FTP、DNS、SMTP皆屬應用層協定。IP協定屬網路層。TCP、UDP屬傳輸層。\n路由器運作於網路層，負責不同網路間的封包轉送。交換器運作於資料連結層，負責同網路內的訊框轉送。\n\n問題：多選題：下列哪些協定屬於OSI模型的應用層？\n(a) HTTP\n(b) IP\n(c) FTP\n(d) DNS\n(e) TCP",
+    "output": "(a) HTTP\n(c) FTP\n(d) DNS"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n關聯式資料庫（RDBMS）以表格形式儲存資料，使用SQL進行查詢。主要特性包含ACID：\nAtomicity（原子性）：交易全部成功或全部失敗。\nConsistency（一致性）：交易前後資料庫保持一致狀態。\nIsolation（隔離性）：並行交易互不干擾。\nDurability（持久性）：已提交的交易永久保存。\n常見RDBMS：MySQL、PostgreSQL、Oracle、SQL Server、SQLite。\nNoSQL資料庫不使用固定表格結構，適合大量非結構化資料，如MongoDB（文件型）、Redis（鍵值型）、Cassandra（寬欄型）。\n\n問題：多選題：下列哪些是ACID特性的組成？\n(a) Atomicity（原子性）\n(b) Availability（可用性）\n(c) Consistency（一致性）\n(d) Isolation（隔離性）\n(e) Durability（持久性）",
+    "output": "(a) Atomicity（原子性）\n(c) Consistency（一致性）\n(d) Isolation（隔離性）\n(e) Durability（持久性）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nHTTP方法（動詞）定義對資源的操作類型：\nGET：取得資源，不應修改伺服器狀態，為冪等操作。\nPOST：提交資料，通常用於新增資源，非冪等。\nPUT：更新資源（完整替換），為冪等操作。\nPATCH：部分更新資源，非冪等。\nDELETE：刪除資源，為冪等操作。\nHEAD：只取得回應標頭，不回傳主體。\nOPTIONS：查詢伺服器支援的方法。\n冪等（Idempotent）指多次執行同一操作結果相同。\n\n問題：多選題：下列哪些HTTP方法是冪等（Idempotent）操作？\n(a) GET\n(b) POST\n(c) PUT\n(d) DELETE\n(e) PATCH",
+    "output": "(a) GET\n(c) PUT\n(d) DELETE"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nGit是分散式版本控制系統。常用指令：\ngit clone：複製遠端儲存庫到本地。\ngit add：將修改加入暫存區（staging area）。\ngit commit：將暫存區內容提交到本地儲存庫，建立新的commit記錄。\ngit push：將本地commit推送到遠端儲存庫。\ngit pull：從遠端儲存庫拉取最新內容並合併到本地分支。\ngit branch：建立、列出或刪除分支。\ngit merge：將指定分支合併到當前分支。\ngit rebase：將當前分支的commit重新套用到另一個基底上，使歷史更線性。\ngit stash：暫時儲存未commit的修改，清空工作目錄。\n\n問題：多選題：下列哪些Git指令會影響遠端儲存庫的內容？\n(a) git commit\n(b) git push\n(c) git add\n(d) git pull\n(e) git clone",
+    "output": "(b) git push\n(d) git pull"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n容器化技術將應用程式及其依賴打包成可攜式映像檔。Docker是最常見的容器平台。\nDocker核心概念：\nImage（映像檔）：唯讀的應用程式模板，由Dockerfile建立。\nContainer（容器）：Image的執行實例，可啟動、停止、刪除。\nDockerfile：定義如何建立Image的腳本文件。\nRegistry：儲存和分發Image的倉庫，如Docker Hub。\nVolume：容器的持久化儲存，資料不會隨容器刪除而消失。\n容器與虛擬機器（VM）差異：容器共享Host OS核心，啟動快、資源消耗少；VM有獨立OS，隔離性更強。\n\n問題：多選題：下列哪些是Docker的核心概念？\n(a) Image（映像檔）\n(b) Kernel（核心）\n(c) Container（容器）\n(d) Volume（儲存卷）\n(e) Hypervisor",
+    "output": "(a) Image（映像檔）\n(c) Container（容器）\n(d) Volume（儲存卷）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n對稱加密使用同一把金鑰進行加密和解密，速度快，適合大量資料加密。常見演算法：AES（Advanced Encryption Standard）、DES（已不安全）、3DES、ChaCha20。\n非對稱加密使用公鑰加密、私鑰解密（或私鑰簽章、公鑰驗證），安全性高但速度慢。常見演算法：RSA、ECC（橢圓曲線）、DSA。\n雜湊函數（Hash）將任意長度資料轉為固定長度摘要，為單向操作不可逆。常見演算法：MD5（已不安全）、SHA-1（已不安全）、SHA-256、SHA-3。\nTLS/HTTPS結合對稱與非對稱加密：握手階段用非對稱加密交換金鑰，資料傳輸階段用對稱加密。\n\n問題：多選題：下列哪些屬於非對稱加密演算法？\n(a) AES\n(b) RSA\n(c) ECC（橢圓曲線）\n(d) DES\n(e) DSA",
+    "output": "(b) RSA\n(c) ECC（橢圓曲線）\n(e) DSA"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nLinux檔案權限以三組三位元表示：擁有者（Owner）、群組（Group）、其他人（Others）。\n每組包含讀（r=4）、寫（w=2）、執行（x=1）三種權限。\nchmod指令修改權限，chown修改擁有者，chgrp修改群組。\n常用指令：\nls -l：列出檔案詳細資訊包含權限。\nps aux：列出所有執行中的程序。\nkill -9 PID：強制終止程序。\ngrep：搜尋文字內容。\nawk：文字處理工具，適合欄位分析。\nsed：串流編輯器，適合文字替換。\nfind：搜尋檔案。\ntail -f：即時監看檔案末端（常用於看log）。\n\n問題：多選題：下列哪些Linux指令可用於文字搜尋或處理？\n(a) grep\n(b) kill\n(c) awk\n(d) sed\n(e) chown",
+    "output": "(a) grep\n(c) awk\n(d) sed"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n網路攻擊手法分類：\n注入攻擊（Injection）：如SQL Injection、Command Injection，將惡意指令注入應用程式。\n跨站腳本（XSS, Cross-Site Scripting）：在網頁植入惡意腳本，在其他使用者瀏覽器執行。\n跨站請求偽造（CSRF, Cross-Site Request Forgery）：誘騙已登入使用者的瀏覽器發送惡意請求。\n中間人攻擊（MITM, Man-in-the-Middle）：攔截並可能篡改通訊雙方的資料。\n阻斷服務攻擊（DoS/DDoS）：以大量流量或請求癱瘓目標服務。\n社交工程（Social Engineering）：利用人性弱點（如釣魚郵件）取得機密資訊。\n零時差漏洞（Zero-Day）：利用尚未被發現或修補的漏洞進行攻擊。\n\n問題：多選題：下列哪些屬於Web應用程式常見的攻擊手法？\n(a) SQL Injection\n(b) DDoS\n(c) XSS（跨站腳本）\n(d) CSRF（跨站請求偽造）\n(e) Zero-Day",
+    "output": "(a) SQL Injection\n(c) XSS（跨站腳本）\n(d) CSRF（跨站請求偽造）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n雲端服務模型定義服務提供者與客戶的責任邊界：\nIaaS（Infrastructure as a Service）：提供虛擬化基礎設施（VM、儲存、網路），客戶管理OS以上所有層。代表：AWS EC2、Azure VM、GCP Compute Engine。\nPaaS（Platform as a Service）：提供開發與部署平台，客戶只需管理應用程式與資料。代表：Heroku、Google App Engine、AWS Elastic Beanstalk。\nSaaS（Software as a Service）：提供完整應用程式，客戶只需使用，無需管理任何基礎設施。代表：Gmail、Salesforce、Microsoft 365。\nFaaS（Function as a Service）/Serverless：客戶只需部署函數，平台自動管理執行環境與擴展。代表：AWS Lambda、Azure Functions、GCP Cloud Functions。\n\n問題：多選題：下列哪些屬於PaaS（平台即服務）的代表產品？\n(a) AWS EC2\n(b) Heroku\n(c) Google App Engine\n(d) Gmail\n(e) AWS Elastic Beanstalk",
+    "output": "(b) Heroku\n(c) Google App Engine\n(e) AWS Elastic Beanstalk"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n軟體開發方法論：\n瀑布式（Waterfall）：線性循序開發，各階段完成後才進入下一階段，適合需求明確不易變更的專案。\n敏捷（Agile）：迭代式開發，強調快速交付、持續回饋、擁抱變化。Scrum和Kanban是常見敏捷框架。\nScrum：以Sprint（通常2週）為迭代單位，角色包含Product Owner、Scrum Master、開發團隊。\nDevOps：整合開發（Dev）與維運（Ops）流程，強調自動化、持續整合（CI）、持續交付（CD）。\nCI（Continuous Integration）：開發者頻繁合併程式碼，自動執行測試。\nCD（Continuous Delivery/Deployment）：自動化部署流程，確保軟體隨時可交付。\nTDD（Test-Driven Development）：先寫測試再寫實作，確保程式碼可測試性。\n\n問題：多選題：下列哪些是DevOps文化的核心實踐？\n(a) 瀑布式開發\n(b) 持續整合（CI）\n(c) 持續交付（CD）\n(d) 自動化測試\n(e) 嚴格的部門分隔",
+    "output": "(b) 持續整合（CI）\n(c) 持續交付（CD）\n(d) 自動化測試"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nPython資料型別：\n不可變（Immutable）型別：int、float、str、tuple、frozenset、bool。一旦建立無法修改。\n可變（Mutable）型別：list、dict、set。建立後可以修改內容。\n序列型別（有順序）：str、list、tuple。支援索引和切片操作。\n映射型別：dict。以鍵值對（key-value）儲存資料，鍵必須為不可變型別。\n集合型別：set、frozenset。不允許重複元素，不保證順序。\nNone是Python的空值，型別為NoneType。\n布林值True和False是int的子類別，True==1，False==0。\n\n問題：多選題：下列哪些Python資料型別是不可變（Immutable）的？\n(a) list\n(b) str\n(c) tuple\n(d) dict\n(e) frozenset",
+    "output": "(b) str\n(c) tuple\n(e) frozenset"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n微服務架構（Microservices）將應用程式拆分為多個小型、獨立部署的服務，每個服務負責單一業務功能。\n優點：獨立部署與擴展、技術多樣性、故障隔離、團隊自主性。\n缺點：分散式系統複雜性增加、服務間通訊開銷、資料一致性難以維護、運維複雜。\n服務間通訊方式：REST API（同步）、gRPC（同步，高效能）、訊息佇列如Kafka/RabbitMQ（非同步）。\n服務發現（Service Discovery）：服務動態註冊與查詢，如Consul、Eureka。\nAPI Gateway：統一入口，負責路由、認證、限流、負載均衡。\nCircuit Breaker（熔斷器）：防止故障蔓延，如Hystrix、Resilience4j。\n\n問題：多選題：下列哪些是微服務架構相較於單體架構的優點？\n(a) 降低分散式系統複雜性\n(b) 各服務可獨立部署\n(c) 故障隔離，單一服務故障不影響整體\n(d) 資料一致性更容易維護\n(e) 各服務可使用不同技術棧",
+    "output": "(b) 各服務可獨立部署\n(c) 故障隔離，單一服務故障不影響整體\n(e) 各服務可使用不同技術棧"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料結構基礎：\n陣列（Array）：連續記憶體，隨機存取O(1)，插入/刪除O(n)。\n鏈結串列（Linked List）：節點含資料與指標，插入/刪除O(1)，隨機存取O(n)。\n堆疊（Stack）：後進先出（LIFO），push/pop操作。\n佇列（Queue）：先進先出（FIFO），enqueue/dequeue操作。\n雜湊表（Hash Table）：鍵值對儲存，平均查詢O(1)，最壞O(n)（碰撞）。\n二元搜尋樹（BST）：左小右大，平均搜尋O(log n)，最壞O(n)（退化為鏈結串列）。\n堆積（Heap）：完全二元樹，最大堆（父節點≥子節點）或最小堆，取最大/最小值O(1)，插入O(log n)。\n\n問題：多選題：下列哪些資料結構的平均查詢時間複雜度為O(1)？\n(a) 陣列（透過索引）\n(b) 鏈結串列\n(c) 雜湊表\n(d) 二元搜尋樹\n(e) 堆疊（透過索引）",
+    "output": "(a) 陣列（透過索引）\n(c) 雜湊表"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nRESTful API設計原則：\n無狀態（Stateless）：每個請求包含所有必要資訊，伺服器不保留客戶端狀態。\n統一介面（Uniform Interface）：使用標準HTTP方法，資源以URI識別。\n資源導向：以名詞代表資源（如/users），以HTTP方法代表動作。\nHTTP狀態碼：2xx成功、3xx重新導向、4xx客戶端錯誤、5xx伺服器錯誤\n常見狀態碼：200 OK、201 Created、204 No Content、400 Bad Request、401 Unauthorized、403 Forbidden、404 Not Found、500 Internal Server Error。\n版本控制：透過URL（/api/v1/）或Header管理API版本。\nHATEOAS：回應中包含相關資源連結，讓客戶端動態探索API。\n\n問題：多選題：下列哪些HTTP狀態碼代表伺服器端錯誤？\n(a) 404\n(b) 500\n(c) 502\n(d) 401\n(e) 503",
+    "output": "(b) 500\n(c) 502\n(e) 503"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n訊息佇列（Message Queue）是非同步通訊的中介軟體，生產者發送訊息至佇列，消費者從佇列取出處理。\n常見系統：Apache Kafka、RabbitMQ、AWS SQS、ActiveMQ、Redis Pub/Sub。\nKafka特性：高吞吐量、持久化儲存、支援回放（replay）、以Topic分類訊息、Consumer Group平行消費。\nRabbitMQ特性：支援多種Exchange類型（direct、fanout、topic、headers）、訊息確認機制（ACK）、死信佇列（DLQ）。\n訊息佇列使用場景：解耦服務、削峰填谷（流量緩衝）、非同步處理（如寄送Email）、事件驅動架構。\n\n問題：多選題：下列哪些是使用訊息佇列的主要優點？\n(a) 提升服務間的緊密耦合\n(b) 解耦生產者與消費者\n(c) 削峰填谷，緩衝突發流量\n(d) 支援非同步處理\n(e) 降低系統可用性",
+    "output": "(b) 解耦生產者與消費者\n(c) 削峰填谷，緩衝突發流量\n(d) 支援非同步處理"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n正規表達式（Regular Expression, Regex）是描述字串模式的語法。\n常用元字元：\n.：匹配任意單一字元（除換行）。\n*：前面元素出現0次或多次。\n+：前面元素出現1次或多次。\n?：前面元素出現0次或1次。\n^：字串開頭（或在[]內表示否定）。\n$：字串結尾。\n[]：字元集合，如[a-z]表示小寫字母。\n\\d：數字（等同[0-9]）。\n\\w：字母數字底線（等同[a-zA-Z0-9_]）。\n\\s：空白字元。\n()：分組。\n|：或。\n{n,m}：出現n到m次。\n\n問題：多選題：下列哪些正規表達式元字元可用於表達「重複次數」？\n(a) .\n(b) *\n(c) +\n(d) ^\n(e) {n,m}",
+    "output": "(b) *\n(c) +\n(e) {n,m}"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n負載均衡（Load Balancing）將流量分散到多台伺服器，提高可用性與效能。\n常見演算法：\n輪詢（Round Robin）：依序分配請求給每台伺服器。\n加權輪詢（Weighted Round Robin）：根據伺服器效能分配不同權重。\n最少連線（Least Connections）：將請求分配給當前連線數最少的伺服器。\nIP雜湊（IP Hash）：根據客戶端IP決定伺服器，確保同一客戶端總是連到同一台（Session保持）。\n負載均衡分層：\nL4（傳輸層）：根據IP和Port分流，速度快。\nL7（應用層）：根據HTTP內容（URL、Header、Cookie）分流，功能豐富。\n常見產品：Nginx、HAProxy、AWS ELB、F5。\n\n問題：多選題：下列哪些負載均衡演算法能確保相同客戶端的請求總是導向同一台伺服器？\n(a) 輪詢（Round Robin）\n(b) IP雜湊（IP Hash）\n(c) 最少連線（Least Connections）\n(d) 加權輪詢（Weighted Round Robin）\n(e) 黏性會話（Sticky Session）",
+    "output": "(b) IP雜湊（IP Hash）\n(e) 黏性會話（Sticky Session）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nTCP三向交握建立連線流程：\n(1) 客戶端送SYN（同步）封包給伺服器。\n(2) 伺服器回應SYN-ACK（同步確認）封包。\n(3) 客戶端送ACK（確認）封包，連線建立完成。\n四向揮手終止連線：\n(1) 主動方送FIN。\n(2) 被動方回ACK。\n(3) 被動方送FIN。\n(4) 主動方回ACK，等待2MSL後關閉。\nTCP保證資料按序到達、不重複、不遺漏，具有流量控制與擁塞控制機制。\n\n問題：是非題：TCP連線建立需要四向交握（Four-way Handshake）。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n雜湊函數（Hash Function）特性：\n確定性：相同輸入永遠產生相同輸出。\n單向性：無法從雜湊值反推原始輸入。\n雪崩效應：輸入微小變化導致輸出大幅改變。\n碰撞抵抗性：難以找到兩個不同輸入產生相同輸出。\n固定輸出長度：無論輸入長度，輸出長度固定（如SHA-256輸出256 bits）。\nMD5已被證明不安全，存在碰撞漏洞。SHA-1也已不推薦使用。SHA-256和SHA-3目前仍被認為安全。\n\n問題：是非題：雜湊函數是可逆的，可以從雜湊值還原原始資料。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n索引（Index）是資料庫中提升查詢效能的資料結構，常見實作為B-Tree或Hash。\n索引優點：大幅加速SELECT查詢、加速ORDER BY和GROUP BY操作。\n索引缺點：佔用額外儲存空間、降低INSERT/UPDATE/DELETE效能（需同步維護索引）。\n主鍵（Primary Key）自動建立唯一索引。外鍵（Foreign Key）建議建立索引以加速JOIN操作。\n複合索引（Composite Index）在多欄位上建立索引，遵循最左前綴原則（查詢條件需從左側欄位開始匹配）。\n全表掃描（Full Table Scan）：無法使用索引時逐行掃描，在大表上效能極差。\n\n問題：是非題：資料庫索引可以同時提升查詢（SELECT）和寫入（INSERT/UPDATE/DELETE）的效能。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nHTTP是無狀態（Stateless）協定，每個請求相互獨立，伺服器不記憶之前的請求。\n為了在無狀態協定上維持使用者狀態，常用機制：\nCookie：伺服器在回應中設定，瀏覽器自動在後續請求帶上。可設定過期時間、Domain、Path、HttpOnly、Secure屬性。\nSession：狀態儲存在伺服器端，客戶端只持有Session ID（通常透過Cookie傳遞）。\nJWT（JSON Web Token）：自包含的token，狀態儲存在token中，伺服器無需儲存Session。\nLocal Storage / Session Storage：瀏覽器端儲存，不會自動隨請求發送。\n\n問題：是非題：HTTP本身是有狀態（Stateful）的協定，伺服器會自動記憶每個客戶端的請求歷史。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nIPv4地址由32位元組成，以點分十進位表示（如192.168.1.1）。理論上可表示約43億個地址。\n由於IPv4地址耗盡，發展出NAT（網路位址轉換）技術，讓多台私有IP設備共用一個公有IP。\n私有IP範圍（RFC 1918）：\n10.0.0.0 ~ 10.255.255.255（A類）\n172.16.0.0 ~ 172.31.255.255（B類）\n192.168.0.0 ~ 192.168.255.255（C類）\nIPv6使用128位元地址，以冒號分隔的十六進位表示，可提供約3.4×10^38個地址，從根本上解決地址耗盡問題。\n\n問題：是非題：192.168.100.50屬於私有IP位址範圍，無法直接在公開網際網路上路由。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nSQL注入（SQL Injection）是最常見的Web安全漏洞之一。攻擊者在輸入欄位插入惡意SQL語句，若應用程式直接將使用者輸入拼接成SQL查詢，攻擊者可繞過認證、讀取/修改/刪除資料庫資料。\n防範方式：\n參數化查詢（Prepared Statement）：最有效的防範方式，將SQL結構與資料分離。\nORM框架：通常自動處理參數化。\n輸入驗證與過濾：作為輔助防線。\n最小權限原則：資料庫帳號只授予必要權限。\nWAF（Web Application Firewall）：可偵測並阻擋攻擊流量。\n僅靠前端輸入驗證無法防止SQL Injection，因攻擊者可繞過前端直接發送請求。\n\n問題：是非題：只要在前端（瀏覽器）做好輸入驗證，就能完全防止SQL Injection攻擊。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n快取（Cache）是將常用資料暫存於高速儲存媒介，減少對後端資料庫或API的重複查詢。\n快取策略：\nCache-Aside（旁路快取）：應用程式先查快取，未命中再查資料庫並寫入快取。\nWrite-Through：寫入時同時更新快取與資料庫。\nWrite-Back：先寫快取，非同步更新資料庫，效能高但有資料遺失風險。\n快取失效問題：\n快取穿透：查詢不存在的資料，每次都穿透到資料庫。解法：快取空值或布隆過濾器。\n快取雪崩：大量快取同時過期，流量全打到資料庫。解法：隨機過期時間或永不過期。\n快取擊穿：熱點資料快取過期瞬間大量請求打到資料庫。解法：互斥鎖或永不過期。\n\n問題：是非題：快取雪崩是指大量快取在同一時間過期失效，導致請求全部打到後端資料庫。",
+    "output": "正確"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\nHTTPS使用TLS（Transport Layer Security）在HTTP之上提供加密傳輸。\nTLS握手流程（簡化）：\n(1) ClientHello：客戶端發送支援的TLS版本、加密套件清單。\n(2) ServerHello：伺服器選定版本與加密套件，發送憑證。\n(3) 客戶端驗證憑證（透過CA憑證鏈）。\n(4) 金鑰交換（如ECDHE），雙方計算出相同的對話金鑰。\n(5) 後續通訊使用對稱加密。\n數位憑證由CA（Certificate Authority）簽發，包含網站公鑰和CA的數位簽章。\nSelf-signed（自簽憑證）不由公信CA簽發，瀏覽器會顯示警告。\n憑證鏈：終端憑證→中間CA→根CA（預載於作業系統）。\n\n問題：是非題：HTTPS整個通訊過程都使用非對稱加密來保護資料傳輸。",
+    "output": "錯誤"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n時間複雜度描述演算法執行時間隨輸入規模成長的趨勢，以Big O符號表示。\n常見複雜度由快到慢：O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)\n二元搜尋（Binary Search）：每次將搜尋範圍減半，時間複雜度O(log n)。\n線性搜尋（Linear Search）：逐一比較，時間複雜度O(n)。\n泡沫排序（Bubble Sort）：平均O(n²)。\n快速排序（Quick Sort）：平均O(n log n)，最壞O(n²)（已排序資料）。\n合併排序（Merge Sort）：穩定O(n log n)，需要O(n)額外空間。\n在已排序的100萬筆資料中搜尋，二元搜尋最多約需20次比較（log₂(1000000)≈20）。\n\n問題：單選題：若要在已排序的陣列中搜尋特定值，下列哪個演算法效率最佳？\n(a) 線性搜尋\n(b) 泡沫排序後搜尋\n(c) 二元搜尋\n(d) 隨機搜尋",
+    "output": "(c) 二元搜尋"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n設計模式（Design Pattern）是軟體設計中常見問題的可重用解決方案，分為三大類：\n創建型（Creational）：處理物件建立，如Singleton（單例）、Factory（工廠）、Builder（建造者）、Prototype（原型）。\n結構型（Structural）：處理物件組合，如Adapter（適配器）、Decorator（裝飾器）、Proxy（代理）、Composite（組合）、Facade（外觀）。\n行為型（Behavioral）：處理物件互動，如Observer（觀察者）、Strategy（策略）、Command（命令）、Iterator（迭代器）、Template Method。\nSingleton模式確保一個類別只有一個實例，並提供全域存取點。常用於設定管理、日誌系統、連線池。\nObserver模式定義一對多依賴關係，當一個物件狀態改變，所有依賴它的物件自動通知更新。\n\n問題：單選題：下列哪個設計模式確保一個類別在程式中只能建立一個實例？\n(a) Factory（工廠模式）\n(b) Observer（觀察者模式）\n(c) Singleton（單例模式）\n(d) Decorator（裝飾器模式）",
+    "output": "(c) Singleton（單例模式）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n記憶體管理中，常見的問題：\n記憶體洩漏（Memory Leak）：程式申請記憶體後未釋放，導致可用記憶體持續減少。\n緩衝區溢位（Buffer Overflow）：寫入超過緩衝區大小的資料，可能覆蓋相鄰記憶體，導致程式崩潰或安全漏洞。\n懸空指標（Dangling Pointer）：指向已釋放記憶體的指標，使用時行為未定義。\n雙重釋放（Double Free）：對同一記憶體位址呼叫free()兩次，導致未定義行為。\n堆疊溢位（Stack Overflow）：遞迴過深或區域變數過大，超出堆疊空間。\n垃圾回收（GC）：Java、Python、Go等語言自動管理記憶體，開發者無需手動釋放，但有GC暫停問題。\nRust使用所有權（Ownership）系統在編譯期確保記憶體安全，無需GC。\n\n問題：單選題：一個C程式中，動態配置的記憶體在使用完畢後未呼叫free()釋放，這會導致什麼問題？\n(a) 緩衝區溢位\n(b) 記憶體洩漏\n(c) 堆疊溢位\n(d) 懸空指標",
+    "output": "(b) 記憶體洩漏"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n網路防火牆根據預先定義的規則過濾網路流量，分為：\n封包過濾（Packet Filter）：根據IP、Port、協定過濾，速度快但無法檢視應用層內容。\n狀態檢測（Stateful Inspection）：追蹤連線狀態，允許已建立連線的回應封包通過。\n應用層防火牆（WAF, Web Application Firewall）：針對HTTP/HTTPS流量，可識別SQL Injection、XSS等攻擊。\n下一代防火牆（NGFW）：結合深度封包檢測、應用識別、入侵防禦等功能。\nDMZ（非軍事區）：介於內部網路與外部網路之間的隔離區，放置對外服務（如Web伺服器）。\nIDS（入侵偵測系統）：偵測攻擊但不主動阻擋。IPS（入侵防禦系統）：偵測並主動阻擋攻擊。\n\n問題：單選題：下列哪種防火牆技術能夠識別並阻擋SQL Injection和XSS攻擊？\n(a) 封包過濾防火牆\n(b) 狀態檢測防火牆\n(c) WAF（Web應用程式防火牆）\n(d) 路由器ACL",
+    "output": "(c) WAF（Web應用程式防火牆）"
+  },
+  {
+    "instruction": "你是一個專業的問答助理。請根據以下提供的參考資料，回答使用者的問題。\n如果是選擇題或是非題，請直接給出正確完整選項（例如 (a) xxx）或是「正確/錯誤」，不需要說明任何理由。多選題請用換行分隔。\n如果參考資料中沒有相關資訊，請直接說明「根據現有資料無法回答」，不要自行編造答案。",
+    "input": "參考資料：\n資料庫正規化（Normalization）消除資料冗餘，確保資料一致性。\n第一正規形式（1NF）：每個欄位只包含原子值（不可分割），不允許重複群組。\n第二正規形式（2NF）：符合1NF，且非主鍵欄位完全依賴於主鍵（消除部分依賴）。\n第三正規形式（3NF）：符合2NF，且非主鍵欄位不依賴於其他非主鍵欄位（消除遞移依賴）。\nBCNF（Boyce-Codd NF）：比3NF更嚴格，每個決定因素都是超鍵。\n反正規化（Denormalization）：為了提升查詢效能，刻意增加冗餘，減少JOIN操作。\n在OLAP（分析型）場景常用反正規化；OLTP（交易型）場景通常使用正規化。\n\n問題：單選題：資料庫正規化的主要目的是什麼？\n(a) 提升查詢速度\n(b) 減少資料冗餘並確保資料一致性\n(c) 增加索引數量\n(d) 提升寫入效能",
+    "output": "(b) 減少資料冗餘並確保資料一致性"
+  }
+]
