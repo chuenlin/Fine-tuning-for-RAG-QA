@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+
+# FAISS index (regenerable from chunk.csv)
+faiss_index/
+
+# Model checkpoints (too large for GitHub)
+saves/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temp / draft files
+testset_tmp.csv
+*_v1.csv
+*_v2.csv
