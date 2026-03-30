@@ -139,7 +139,10 @@
 └── eval_result/
     ├── eval_result.xlsx                              # 彙整結果
     ├── eval_v2_03251950_0.5B.csv                    # 微調前評測結果
-    └── eval_v2_03260034_0.5B_lora03231808.csv       # 微調後評測結果
+    ├── eval_v2_03260034_0.5B_lora03231808.csv       # 微調後評測結果
+    └── analysis_report/
+        ├── eval_v2_03251950_0.5B.md                 # 微調前逐題分析報告
+        └── eval_v2_03260034_0.5B_lora03231808.md    # 微調後逐題分析報告
 ```
 
 ---
@@ -169,7 +172,7 @@ FAISS_INDEX_PATH = "faiss_index"
 python rag/evaluation.py
 ```
 
-結果會存至 `eval_result/` 目錄下，可用 `analyze_report.py` 產出 Markdown 報告：
+結果會存至 `eval_result/` 目錄下，可用 `analyze_report.py` 產出逐題 Markdown 分析報告（自動存至 `eval_result/analysis_report/`）：
 
 ```bash
 python rag/analyze_report.py eval_result/<filename>.csv
